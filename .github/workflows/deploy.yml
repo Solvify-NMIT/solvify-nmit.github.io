@@ -43,7 +43,7 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-24.04 # Explicitly specify the Ubuntu 24.04 runner version
-    if: github.ref == 'refs/heads/deploy-react-app'
+    if: github.ref == 'refs/heads/main'
 
     steps:
       # Step 6: Download the artifact (v4)
