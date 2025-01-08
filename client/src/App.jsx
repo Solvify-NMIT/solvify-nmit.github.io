@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <div className='text-center font-bold text-3xl'>Solvify website</div>
+      <div className='text-center font-bold text-3xl'>Solvify website project</div>
     </>
   )
 }
