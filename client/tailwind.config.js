@@ -9,7 +9,9 @@ export default {
       colors:{
         LightGrey:'#141313',
         Grey:'#5e5e5e',
-        Yellow:'#ffd149'
+        Yellow:'#ffd149',
+        lightYellow:'#c9bc61',
+        yel:'#c5a331'
       }
     },
   },
