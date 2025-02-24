@@ -35,7 +35,7 @@ function App() {
         scrollToPhoto={() => scrollToSection(groupPhotoRef)}
         scrollToInsta ={()=>scrollToSection(instaRef)}
       />
-      <div ref={homeRef}><Home /></div>
+      <div ref={homeRef}><Home scrollToProject={() => scrollToSection(projectRef)} /></div>
       <div ref={aboutRef}><About /></div>
       <div ref={eventsRef}><Events /></div>
       <div ref={projectRef}><Projects /></div>
