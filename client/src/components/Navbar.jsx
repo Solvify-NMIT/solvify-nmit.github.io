@@ -29,13 +29,13 @@ const Navbar = ({scrollToAbout,scrollToHome,scrollToEvent,scrollToProject,scroll
     ]
 
   return (
-    <header className="w-full fixed top-0 left-0 right-0">
-    <nav className="px-28 mt-5">
+    <header className="w-full fixed top-0 left-0 right-0 z-50">
+    <nav className="px-28 mt-5 ">
       <div className="flex justify-between items-center bg-LightGrey py-4 px-16 rounded-3xl">
         <button
           onClick={() => scrollToHome()}
         >
-          <img src={image} className="mr-36 rounded-lg w-12 " />
+          <img src={image} className="mr-36 rounded-lg w-12 z-10" />
         </button>
 
         <ul className="flex space-x-10 font-bold text-lg">
