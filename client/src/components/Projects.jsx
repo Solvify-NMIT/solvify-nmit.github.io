@@ -1,111 +1,81 @@
 import React, { useState } from 'react';
-import image from "../assets/Projects_comp1.svg"
-import image1 from "../assets/Projects_comp2.svg"
+import image from "../assets/Projects_comp1.svg";
+import image1 from "../assets/Projects_comp2.svg";
+
+const ProjectCard = ({ project }) => (
+  <div className="transform scale-90">
+    <div className="bg-white rounded-full text-black text-2xl py-2 text-center w-12 font-bold relative top-4 left-36">
+      {project.id}
+    </div>
+
+    <div className="rounded-3xl shadow-[6px_6px_0px_0px_#ffd149] overflow-hidden">
+      <div className="border-b-4 border-black bg-yellow-400 text-black text-2xl md:text-3xl font-bold h-[100px] flex items-center justify-center">
+        {project.name}
+      </div>
+
+      <div className="bg-white text-black flex flex-col items-center justify-center gap-4 px-6 py-4 h-[250px]">
+        <p className="text-center text-base md:text-lg">{project.description}</p>
+        <button className="border border-black text-black bg-white text-sm md:text-base font-bold py-1 px-4 rounded-full w-1/2">
+          View Project
+        </button>
+        <button className="bg-black text-yellow-400 text-sm md:text-base py-1 font-semibold rounded-full w-1/2">
+          GitHub Link
+        </button>
+      </div>
+    </div>
+  </div>
+);
 
 const Projects = () => {
   const [showAllProjects, setShowAllProjects] = useState(false);
 
-  // Sample project data
   const projects = [
-    { id: 1, name: "Mini health chatbot", description: "classical Latin literature from 45 BC, making it over 2000 years old" },
-    { id: 2, name: "Project Name", description: "classical Latin literature from 45 BC, making it over 2000 years old" },
-    { id: 3, name: "Project Name", description: "classical Latin literature from 45 BC, making it over 2000 years old" },
-    { id: 4, name: "Mini health chatbot", description: "classical Latin literature from 45 BC, making it over 2000 years old" },
-    { id: 5, name: "Project Name", description: "classical Latin literature from 45 BC, making it over 2000 years old" },
-    { id: 6, name: "Project Name", description: "classical Latin literature from 45 BC, making it over 2000 years old" },
+    { id: 1, name: "Mini health chatbot", description: "An AI-powered health assistant chatbot to give instant responses based on symptoms." },
+    { id: 2, name: "Code Collab", description: "Real-time collaborative code editor supporting multiple languages and live sharing." },
+    { id: 3, name: "Career Portal", description: "Centralized career portal with resources, internships, and mentor connections." },
+    { id: 4, name: "Event Manager", description: "One-stop dashboard for organizing and tracking Solvify events." },
+    { id: 5, name: "Bridge2Code", description: "Upcoming education platform bridging college learning and industry skills." },
+    { id: 6, name: "Solvify Connect", description: "Internal communication tool built for smooth coordination among club teams." },
   ];
 
   const toggleProjectView = () => {
     setShowAllProjects(!showAllProjects);
   };
 
-  const ProjectCard = ({ project }) => (
-    <div className='scale-90 '>
-      <div className='bg-white rounded-full text-black text-2xl  py-2  text-center max-w-[50px]  font-bold relative top-4 left-36 '>{project.id}</div>
-      <div  className="rounded-b-3xl rounded-t-3xl" style={{ boxShadow: '6px 6px 0px 0px rgba(255, 209, 73, 1)' }}>
-             
-        <div className='flex flex-col items-center border border-b-4 border-black '>
-          
-          <div className='bg-Yellow text-black w-full text-3xl font-bold px-8 py-4 text-center outline outline-white h-[100px] flex items-center justify-center'>{project.name}</div>
-        </div>
-        <div className='outline-[8px] flex flex-col items-center justify-center gap-4 bg-white h-[250px] rounded-b-3xl '>
-          <div className='text-black text-xl px-8 font-normal text-center'>{project.description}</div>
-          <button className="border border-black outline  text-black bg-white text-lg font-bold py-1 px-6 rounded-full w-1/2  ">
-            View Project
-          </button>
-          <button className="bg-black text-Yellow text-sm py-1 font-semibold text-xl  rounded-full w-1/2">
-            Github link
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
-    <div className="min-h-screen bg-black text-white flex justify-between relative mt-40">
-      {/* Left spiral div - placeholder for your image/svg */}
-      <div className="relative top-[-100px] max-w-[250px]">
-        <img src={image} />
+    <section id="projects" className="min-h-screen bg-black text-white px-4 md:px-12 mt-40 flex flex-col items-center relative">
+      {/* Decorative SVGs */}
+      <img src={image} alt="Left design" className="absolute left-0 top-[-80px] w-40 md:w-60" />
+      <img src={image1} alt="Right design" className="absolute right-0 bottom-[-80px] w-40 md:w-60" />
+
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <h1
+          className="text-4xl md:text-5xl font-extrabold"
+          style={{ WebkitTextStroke: "1px #ffd149", color: "transparent" }}
+        >
+          PROJECTS
+        </h1>
+        <p className="text-md md:text-lg mt-8 max-w-3xl mx-auto">
+          Discover the impactful solutions built by our team—from health chatbots to internal tools that streamline our operations.
+        </p>
       </div>
 
-      <div className="py-12 px-6">
-        <div className="text-center mb-12">
-          <h1 className='text-5xl font-extrabold' style={{
-            WebkitTextStroke: "1px #ffd149",
-            color: "transparent",
-          }}>PROJECTS</h1>
-          <p className="text-md px-8 mt-10 mx-auto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio magnam alias aliquid omnis consequatur cum recusandae saepe id? Non reiciendis neque ullam ipsam totam explicabo impedit id accusantium, voluptas quaerat?
-          </p>
-        </div>
-
-        {!showAllProjects ? (
-          <>
-            <div className="grid grid-cols-3 gap-8 mb-12">
-              {projects.slice(0, 3).map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-
-            <div className="flex justify-center mb-12">
-              <button
-                className="bg-Yellow text-black px-8 py-2 rounded-full font-bold"
-                onClick={toggleProjectView}
-              >
-                View All
-              </button>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="grid grid-cols-3 gap-8 mb-12">
-              {projects.slice(0, 3).map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-
-            <div className="grid grid-cols-3 gap-8 mb-12">
-              {projects.slice(3, 6).map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-
-            <div className="flex justify-center mb-12">
-              <button
-                className="bg-Yellow text-black px-8 py-2 rounded-full font-bold"
-                onClick={toggleProjectView}
-              >
-                Close
-              </button>
-            </div>
-          </>
-        )}
+      {/* Project Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {(showAllProjects ? projects : projects.slice(0, 3)).map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </div>
 
-      <div className="relative top-[200px] max-w-[250px] ">
-        <img src={image1} />
-      </div>
-    </div>
+      {/* Toggle Button */}
+      <button
+        onClick={toggleProjectView}
+        className="bg-yellow-400 text-black font-bold px-8 py-2 rounded-full transition duration-300 hover:bg-yellow-300"
+      >
+        {showAllProjects ? "Close" : "View All"}
+      </button>
+    </section>
   );
 };
 
