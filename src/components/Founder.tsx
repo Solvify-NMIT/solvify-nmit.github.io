@@ -7,9 +7,9 @@ const Founder = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const founder = {
-    name: "Arjun Patel",
+    name: "Saurav Kumar",
     title: "Founder & Visionary",
-    image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "https://i.postimg.cc/nhs1y54F/Whats-App-Image-2025-08-13-at-19-32-34.jpg",
     bio: "A passionate computer science student with a vision to bridge the gap between academic learning and real-world application. Arjun founded Solvify Club in 2021 with the belief that collaborative problem-solving and hands-on experience are the keys to building the next generation of tech leaders.",
     longBio: "Starting as a freshman with big dreams and even bigger challenges, Arjun recognized the disconnect between classroom theory and industry practice. His journey began when he struggled to find practical applications for his coursework and realized many students faced the same challenge. This sparked the idea for Solvify Club - a community where students could work on real projects, learn from each other, and build meaningful solutions.",
     achievements: [

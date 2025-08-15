@@ -12,11 +12,11 @@ const Team = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Alex Chen",
-      role: "President",
-      department: "Computer Science",
+      name: "Manasi S",
+      role: "Lead",
+      department: "CSE",
       year: 2023,
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "https://i.postimg.cc/D0HdYw4r/IMG-20250804-201916-MANASI-SRIDHARAN.jpg",
       bio: "Passionate about AI and machine learning. Leading our club's vision for innovation and technical excellence.",
       skills: ["Python", "Machine Learning", "React", "Leadership"],
       social: {
@@ -30,11 +30,11 @@ const Team = () => {
     },
     {
       id: 2,
-      name: "Sarah Kim",
-      role: "Vice President",
-      department: "Software Engineering",
+      name: "Adarsh U A",
+      role: "Co-Lead",
+      department: "CSE",
       year: 2023,
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "https://i.postimg.cc/N0dXzjWK/IMG-20250516-WA0046-adarsh.jpg",
       bio: "Full-stack developer with expertise in modern web technologies. Coordinates technical workshops and mentoring programs.",
       skills: ["JavaScript", "Node.js", "React", "MongoDB"],
       social: {
@@ -47,48 +47,30 @@ const Team = () => {
       contributions: 203
     },
     {
-      id: 19,
-      name: "Alexa Pow",
-      role: "President",
-      department: "Computer Science",
-      year: 2023,
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
-      bio: "Passionate about AI and machine learning. Leading our club's vision for innovation and technical excellence.",
-      skills: ["Python", "Machine Learning", "React", "Leadership"],
-      social: {
-        github: "https://github.com/alexchen",
-        linkedin: "https://linkedin.com/in/alexchen",
-        twitter: "https://twitter.com/alexchen",
-        email: "alex@solvify.club"
-      },
-      projects: 8,
-      contributions: 156
-    },
-    {
       id: 3,
-      name: "Marcus Johnson",
-      role: "Technical Lead",
-      department: "Data Science",
+      name: "K S Prateek",
+      role: "Tech Lead",
+      department: "ISE",
       year: 2023,
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "https://i.postimg.cc/0QyJ7K2t/image-4.png",
       bio: "Data science enthusiast and competitive programmer. Leads our algorithm study groups and coding competitions.",
-      skills: ["Python", "R", "TensorFlow", "Algorithms"],
+      skills: ["SRE/DevOps", "Cloud Computing", "Backend Dev"],
       social: {
-        github: "https://github.com/marcusj",
-        linkedin: "https://linkedin.com/in/marcusj",
-        twitter: "https://twitter.com/marcusj",
-        email: "marcus@solvify.club"
+        github: "https://github.com/imksprateek",
+        linkedin: "https://linkedin.com/in/imksprateek",
+        twitter: "https://twitter.com/imksprateek",
+        email: "ksprateek2004@gmail.com"
       },
       projects: 6,
       contributions: 134
     },
     {
       id: 4,
-      name: "Emily Rodriguez",
-      role: "Event Coordinator",
-      department: "Information Systems",
+      name: "Dhanyata Gowda",
+      role: "Content Lead",
+      department: "ISE",
       year: 2023,
-      image: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "https://i.postimg.cc/gjnHDZjc/Dhanyata-Gowda-Media-and-Publicity-Dhanyata-Gowda.jpg",
       bio: "Expert in project management and community building. Organizes our hackathons and networking events.",
       skills: ["Project Management", "UI/UX", "Marketing", "Communication"],
       social: {
@@ -102,11 +84,11 @@ const Team = () => {
     },
     {
       id: 5,
-      name: "David Park",
-      role: "Web Developer",
-      department: "Computer Science",
-      year: 2022,
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Priya A Reddy",
+      role: "Design Lead",
+      department: "CSE",
+      year: 2023,
+      image: "https://i.postimg.cc/Twkcg9RH/Priya-photo-Priya.jpg",
       bio: "Frontend specialist focused on creating beautiful, accessible user experiences. Maintains our club's digital presence.",
       skills: ["React", "TypeScript", "CSS", "Figma"],
       social: {
@@ -120,11 +102,11 @@ const Team = () => {
     },
     {
       id: 6,
-      name: "Lisa Wong",
-      role: "Mobile Developer",
-      department: "Software Engineering",
-      year: 2022,
-      image: "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Kavya Y P",
+      role: "PR Lead",
+      department: "CSE",
+      year: 2023,
+      image: "https://i.postimg.cc/4xckPWFM/kavya-solvify.png",
       bio: "Mobile app development expert with focus on cross-platform solutions. Leads our mobile development workshops.",
       skills: ["React Native", "Flutter", "Swift", "Kotlin"],
       social: {
@@ -138,11 +120,11 @@ const Team = () => {
     },
     {
       id: 7,
-      name: "Michael Chen",
-      role: "Backend Developer",
-      department: "Computer Science",
-      year: 2022,
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Sneha Reddy",
+      role: "Social Media Lead",
+      department: "ISE",
+      year: 2023,
+      image: "https://i.postimg.cc/P5k1LcW5/20241019-140115-Sneha-Reddy.jpg",
       bio: "Backend architecture specialist with expertise in scalable systems and cloud technologies.",
       skills: ["Node.js", "AWS", "Docker", "PostgreSQL"],
       social: {
@@ -156,11 +138,11 @@ const Team = () => {
     },
     {
       id: 8,
-      name: "Jessica Taylor",
-      role: "UI/UX Designer",
-      department: "Design",
-      year: 2021,
-      image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400",
+      name: "Romita Sarkar",
+      role: "PR Lead",
+      department: "CSE",
+      year: 2023,
+      image: "https://i.postimg.cc/CL8jxYf2/IMG-4260-Romita-Sarkar.jpg",
       bio: "Creative designer passionate about user-centered design and accessibility. Creates stunning interfaces for our projects.",
       skills: ["Figma", "Adobe Creative Suite", "Prototyping", "User Research"],
       social: {
@@ -171,28 +153,10 @@ const Team = () => {
       },
       projects: 5,
       contributions: 92
-    },
-    {
-      id: 9,
-      name: "Ryan Kumar",
-      role: "DevOps Engineer",
-      department: "Computer Science",
-      year: 2021,
-      image: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400",
-      bio: "Infrastructure and automation expert. Manages our deployment pipelines and cloud infrastructure.",
-      skills: ["Kubernetes", "CI/CD", "Terraform", "Monitoring"],
-      social: {
-        github: "https://github.com/ryankumar",
-        linkedin: "https://linkedin.com/in/ryankumar",
-        twitter: "https://twitter.com/ryankumar",
-        email: "ryan@solvify.club"
-      },
-      projects: 6,
-      contributions: 134
     }
   ];
 
-  const years = [2023, 2022, 2021];
+  const years = [2023, 2022];
   const filteredMembers = teamMembers.filter(member => member.year === selectedYear);
 
   const membersPerSlide = 4;
@@ -327,7 +291,7 @@ const Team = () => {
                   >
                     {/* Profile Image */}
                     <div className="relative mb-6">
-                      <motion.div 
+                      <motion.div
                         className="w-24 h-24 mx-auto rounded-2xl overflow-hidden ring-4 ring-yellow-400/20 group-hover:ring-yellow-400/40 transition-all duration-300"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                       >
@@ -337,7 +301,7 @@ const Team = () => {
                           className="w-full h-full object-cover group-hover:scale-115 transition-transform duration-500"
                         />
                       </motion.div>
-                      <motion.div 
+                      <motion.div
                         className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-bold"
                         whileHover={{ scale: 1.1, y: -2 }}
                       >
@@ -347,7 +311,7 @@ const Team = () => {
 
                     {/* Member Info */}
                     <div className="text-center mb-4">
-                      <motion.h3 
+                      <motion.h3
                         className="text-white text-xl font-bold mb-1 group-hover:text-yellow-400 transition-colors duration-300"
                         whileHover={{ scale: 1.05 }}
                       >
@@ -373,7 +337,7 @@ const Team = () => {
                     </div>
 
                     {/* Stats */}
-                    <motion.div 
+                    <motion.div
                       className="flex justify-between text-sm text-gray-400 mb-4"
                       whileHover={{ scale: 1.05 }}
                     >
