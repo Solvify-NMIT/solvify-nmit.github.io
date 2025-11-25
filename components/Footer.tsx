@@ -13,7 +13,7 @@ const Footer = () => {
         }
     }
     
-    return <div className="min-full-screen p-10 flex flex-col justify-center items-center gap-5 bg-black text-white border">
+    return <div className="min-full-screen p-10 flex flex-col justify-center items-center gap-5 bg-black text-white">
         <div className="w-max flex flex-col sm:flex-row gap-5 sm:gap-20 sm:justify-center items-center sm:items-start">
             <div className="w-max text-3xl flex justify-start">
                 {/* chage this image for the solvify logo */}
