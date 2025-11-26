@@ -31,7 +31,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="w-max">
-                <h2 className="text-2xl text-yellow-400 text-center sm:text-left font-bold">Social</h2>
+                <h2 className="text-2xl text-yellow-400 text-center sm:text-left font-bold">Socials</h2>
                 <ul className="pt-3 w-full flex items-center gap-5">
                     <li className="w-8 text-white cursor-pointer hover:text-yellow-400" onClick={() => handleSocial("instagram")}>
                         <svg fill="currentColor" viewBox="0 0 24 24" >
