@@ -13,16 +13,15 @@ const Footer = () => {
         }
     }
     
-    return <div className="min-full-screen p-10 flex flex-col justify-center items-center gap-5 bg-black text-white">
+    return <div className="min-full-screen p-5 flex flex-col justify-center items-center gap-5 bg-black text-white">
         <div className="w-max flex flex-col sm:flex-row gap-5 sm:gap-20 sm:justify-center items-center sm:items-start">
-            <div className="w-max text-3xl flex justify-start">
-                {/* chage this image for the solvify logo */}
-                {/* <img src="globe.svg" alt="solvify_logo" className="w-10" /> */}
-                <h1 className="text-yellow-400">Solvify</h1>
+            <div className="w-max text-3xl flex justify-start gap-2">
+                <img src="solvify_logo.png" alt="solvify_logo" className="w-10" />
+                <h1 className="font-bold text-white text-center sm:text-left">Solvify</h1>
             </div>
             <div className="w-max">
-                <h2 className="text-2xl text-yellow-400 font-bold">Quick links</h2>
-                <ul className="pl-5 pt-3 w-max list-disc">
+                <h2 className="text-2xl text-yellow-400 text-center sm:text-left font-bold">Quick links</h2>
+                <ul className="pl-10 sm:pl-5 pt-3 w-max list-disc">
                     <li className="cursor-pointer hover:text-yellow-400">Home</li>
                     <li className="cursor-pointer hover:text-yellow-400">About Us</li>
                     <li className="cursor-pointer hover:text-yellow-400">Events</li>
@@ -32,7 +31,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="w-max">
-                <h2 className="text-2xl text-yellow-400 font-bold">Social</h2>
+                <h2 className="text-2xl text-yellow-400 text-center sm:text-left font-bold">Social</h2>
                 <ul className="pt-3 w-full flex items-center gap-5">
                     <li className="w-8 text-white cursor-pointer hover:text-yellow-400" onClick={() => handleSocial("instagram")}>
                         <svg fill="currentColor" viewBox="0 0 24 24" >
