@@ -1,15 +1,14 @@
 "use client";
 
 import React from "react";
+import TeamSection from "./TeamSection";
 
-const Hello = () => {
+const TeamHome = () => {
   return (
-    <>
-    <div className="min-full-screen bg-black text-white">
-        TeamHome Section
+    <div className="min-h-screen bg-black text-white">
+      <TeamSection />
     </div>
-    </>
   );
 };
 
-export default Hello;
+export default TeamHome;
