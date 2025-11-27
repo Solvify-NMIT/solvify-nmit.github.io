@@ -47,12 +47,12 @@ const teams = [
 
 const TeamSection = () => {
     return (
-        <section className="team-section">
-            <div className="header-pill">
-                <h1>MEET OUR TEAM</h1>
+        <section className="relative mx-auto w-full max-w-[1200px] px-5 py-10 text-center">
+            <div className="mb-10 inline-block w-[80%] max-w-[600px] rounded-[50px] bg-[#f4d03f] px-10 py-[15px]">
+                <h1 className="m-0 text-[2.5rem] font-[900] uppercase tracking-[1px] text-black max-md:text-[1.8rem]">MEET OUR TEAM</h1>
             </div>
 
-            <div className="main-carousel-container">
+            <div className="relative px-[60px]">
                 <Swiper
                     modules={[Navigation, Pagination]}
                     spaceBetween={50}
@@ -62,14 +62,14 @@ const TeamSection = () => {
                         nextEl: '.main-swiper-button-next',
                         prevEl: '.main-swiper-button-prev',
                     }}
-                    className="main-team-swiper"
+                    className="py-5"
                 >
                     {teams.map((team) => (
                         <SwiperSlide key={team.id}>
-                            <div className="team-slide">
-                                <h2 className="sub-header">{team.title}</h2>
+                            <div className="w-full">
+                                <h2 className="mb-[50px] text-[2rem] font-[700]">{team.title}</h2>
 
-                                <div className="carousel-container">
+                                <div className="relative px-[50px] max-md:px-[30px]">
                                     <Swiper
                                         modules={[Navigation, Pagination]}
                                         spaceBetween={30}
@@ -90,7 +90,7 @@ const TeamSection = () => {
                                                 slidesPerView: 4,
                                             },
                                         }}
-                                        className="team-swiper"
+                                        className="!pb-[50px] !pt-[50px]"
                                     >
                                         {team.members.map((member) => (
                                             <SwiperSlide key={member.id}>
@@ -99,10 +99,10 @@ const TeamSection = () => {
                                         ))}
                                     </Swiper>
 
-                                    <div className={`swiper-button-prev-custom swiper-button-prev-${team.id}`}>
+                                    <div className={`swiper-button-prev-custom swiper-button-prev-${team.id} absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-[2rem] text-white opacity-100 transition-opacity duration-200 hover:opacity-70`}>
                                         <FaChevronLeft />
                                     </div>
-                                    <div className={`swiper-button-next-custom swiper-button-next-${team.id}`}>
+                                    <div className={`swiper-button-next-custom swiper-button-next-${team.id} absolute right-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer text-[2rem] text-white opacity-100 transition-opacity duration-200 hover:opacity-70`}>
                                         <FaChevronRight />
                                     </div>
                                 </div>
@@ -111,10 +111,10 @@ const TeamSection = () => {
                     ))}
                 </Swiper>
 
-                <div className="main-swiper-button-prev main-nav-button">
+                <div className="main-swiper-button-prev main-nav-button absolute left-[10px] top-[15%] z-20 flex h-[55px] w-[55px] -translate-y-1/2 cursor-pointer items-center justify-center rounded-[12px] border-2 border-[#f4d03f] bg-gradient-to-br from-[#f4d03f26] to-[#f4d03f0d] text-[2rem] text-[#f4d03f] shadow-[0_4px_15px_rgba(244,208,63,0.2)] backdrop-blur-[10px] transition-all duration-300 hover:-translate-y-1/2 hover:scale-110 hover:border-white hover:bg-gradient-to-br hover:from-[#f4d03f4d] hover:to-[#f4d03f26] hover:text-white hover:shadow-[0_6px_20px_rgba(244,208,63,0.4)]">
                     <FaChevronLeft />
                 </div>
-                <div className="main-swiper-button-next main-nav-button">
+                <div className="main-swiper-button-next main-nav-button absolute right-[10px] top-[15%] z-20 flex h-[55px] w-[55px] -translate-y-1/2 cursor-pointer items-center justify-center rounded-[12px] border-2 border-[#f4d03f] bg-gradient-to-br from-[#f4d03f26] to-[#f4d03f0d] text-[2rem] text-[#f4d03f] shadow-[0_4px_15px_rgba(244,208,63,0.2)] backdrop-blur-[10px] transition-all duration-300 hover:-translate-y-1/2 hover:scale-110 hover:border-white hover:bg-gradient-to-br hover:from-[#f4d03f4d] hover:to-[#f4d03f26] hover:text-white hover:shadow-[0_6px_20px_rgba(244,208,63,0.4)]">
                     <FaChevronRight />
                 </div>
             </div>
