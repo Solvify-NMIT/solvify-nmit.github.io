@@ -26,10 +26,12 @@ const LogoIntro = () => {
           0% {
             opacity: 0;
             transform: scale(1);
+            color: white;
           }
           100% {
             opacity: 1;
             transform: scale(8);
+            color: #fbbf24;
           }
         }
         .animate-logoIntro {
