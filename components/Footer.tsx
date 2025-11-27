@@ -16,24 +16,24 @@ const Footer = () => {
     return <div className="min-full-screen p-5 flex flex-col justify-center items-center gap-5 bg-black text-white">
         <div className="w-max flex flex-col sm:flex-row gap-5 sm:gap-20 sm:justify-center items-center sm:items-start">
             <div className="w-max text-3xl flex justify-start gap-2">
-                <img src="solvify_logo.png" alt="solvify_logo" className="w-10" />
+                <img src="/Components for Website/solvify_logo.png" alt="solvify_logo" className="w-10" />
                 <h1 className="font-bold text-white text-center sm:text-left">Solvify</h1>
             </div>
             <div className="w-max">
-                <h2 className="text-2xl text-yellow-400 text-center sm:text-left font-bold">Quick links</h2>
+                <h2 className="text-2xl text-amber-300 text-center sm:text-left font-bold">Quick links</h2>
                 <ul className="pl-10 sm:pl-5 pt-3 w-max list-disc">
-                    <li className="cursor-pointer hover:text-yellow-400">Home</li>
-                    <li className="cursor-pointer hover:text-yellow-400">About Us</li>
-                    <li className="cursor-pointer hover:text-yellow-400">Events</li>
-                    <li className="cursor-pointer hover:text-yellow-400">Projects</li>
-                    <li className="cursor-pointer hover:text-yellow-400">Team</li>
-                    <li className="cursor-pointer hover:text-yellow-400">Feed</li>
+                    <li className="cursor-pointer hover:text-amber-300">Home</li>
+                    <li className="cursor-pointer hover:text-amber-300">About Us</li>
+                    <li className="cursor-pointer hover:text-amber-300">Events</li>
+                    <li className="cursor-pointer hover:text-amber-300">Projects</li>
+                    <li className="cursor-pointer hover:text-amber-300">Team</li>
+                    <li className="cursor-pointer hover:text-amber-300">Feed</li>
                 </ul>
             </div>
             <div className="w-max">
-                <h2 className="text-2xl text-yellow-400 text-center sm:text-left font-bold">Socials</h2>
+                <h2 className="text-2xl text-amber-300 text-center sm:text-left font-bold">Socials</h2>
                 <ul className="pt-3 w-full flex items-center gap-5">
-                    <li className="w-8 text-white cursor-pointer hover:text-yellow-400" onClick={() => handleSocial("instagram")}>
+                    <li className="w-8 text-white cursor-pointer hover:text-amber-300" onClick={() => handleSocial("instagram")}>
                         <svg fill="currentColor" viewBox="0 0 24 24" >
                             <path fillRule="evenodd" clipRule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" />
                             <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" />
@@ -42,7 +42,7 @@ const Footer = () => {
                             />
                         </svg>
                     </li>
-                    <li className="w-8 text-white cursor-pointer hover:text-yellow-400" onClick={() => handleSocial("linkedin")}>
+                    <li className="w-8 text-white cursor-pointer hover:text-amber-300" onClick={() => handleSocial("linkedin")}>
                         <svg viewBox="0 0 24 24" fill="currentColor" >
                             <path d="M6.5 8C7.32843 8 8 7.32843 8 6.5C8 5.67157 7.32843 5 6.5 5C5.67157 5 5 5.67157 5 6.5C5 7.32843 5.67157 8 6.5 8Z" />
                             <path d="M5 10C5 9.44772 5.44772 9 6 9H7C7.55228 9 8 9.44771 8 10V18C8 18.5523 7.55228 19 7 19H6C5.44772 19 5 18.5523 5 18V10Z" />
@@ -51,7 +51,7 @@ const Footer = () => {
                                 d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z" />
                         </svg>
                     </li>
-                    <li className="w-8 text-white cursor-pointer hover:text-yellow-400" onClick={() => handleSocial("github")}>
+                    <li className="w-8 text-white cursor-pointer hover:text-amber-300" onClick={() => handleSocial("github")}>
                         <svg viewBox="0 0 20 20" fill="currentColor" >
                             <path d="M10 1c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051-.799-.227-1.655-.341-2.505-.345-.85.004-1.705.118-2.503.345-1.911-1.326-2.751-1.051-2.751-1.051-.543 1.412-.2 2.455-.096 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493C2.867 19.627 0 15.783 0 11.253 0 5.59 4.477 1 10 1z" />
                         </svg>
