@@ -229,11 +229,11 @@ const Instagram = () => {
       style={{ height: '600px' }}
     >
       {/* decorative background glows (pointer-events-none so they don't interfere) */}
-      <div className="absolute inset-0 pointer-events-none -z-0">
+      <div className="absolute inset-0 pointer-events-none z-0">
         {/* reactive dot grid */}
         <DotGrid pointer={pointer} />
 
-         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-50/5 to-transparent" />
+         <div className="absolute inset-0 bg-linear-to-b from-transparent via-amber-50/5 to-transparent" />
        </div>
 
       <div className="relative z-10 px-6">
