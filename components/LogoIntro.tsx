@@ -3,51 +3,19 @@
 import { useEffect, useState } from "react";
 
 const LogoIntro = () => {
-  const [hideIntro, setHideIntro] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setHideIntro(true), 750);
+    // Just a quick blackout to prevent FOUC (Flash of Unstyled Content)
+    // The real animation is now handled in HomePage.tsx for smoothness
+    const timer = setTimeout(() => setIsVisible(false), 500);
     return () => clearTimeout(timer);
   }, []);
 
+  if (!isVisible) return null;
+
   return (
-    <>
-      <div
-        className={`w-screen h-screen pointer-events-none flex items-center justify-center z-50 fixed top-0 left-0 bg-black transition-opacity duration-700 ${hideIntro ? "opacity-0" : "opacity-100"
-          }`}
-      >
-        <h1 className="text-white text-6xl font-bold tracking-wide opacity-0 animate-logoIntro">
-          SOLVIFY
-        </h1>
-      </div>
-
-      <style jsx global>{`
-        @keyframes logoIntro {
-          0% {
-            opacity: 0;
-            transform: scale(1);
-            color: white;
-          }
-          100% {
-            opacity: 1;
-            transform: scale(8);
-            color: #fbbf24;
-          }
-        }
-        .animate-logoIntro {
-          animation: logoIntro 1.2s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-          to {
-            opacity: 1;
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.6s ease-out forwards;
-        }
-      `}</style>
-    </>
+    <div className="fixed inset-0 z-[100] bg-[#050505] pointer-events-none transition-opacity duration-700 ease-out" />
   );
 };
 
