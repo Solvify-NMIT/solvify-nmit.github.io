@@ -1,193 +1,106 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { Lightbulb, X } from "lucide-react";
 
 const AboutUs = () => {
+  // State to manage the visibility of the full-screen modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to toggle modal
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
-    <>
-      <style>{`
-        /* --- RESET --- */
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-black font-['Geist',sans-serif] text-white py-12 md:py-0">
+      
+      {/* Background Elements or Title */}
+      <h1 className="mb-8 md:mb-[5vh] z-10 text-[clamp(2.5rem,6vw,5rem)] font-black uppercase tracking-[2px] text-black [-webkit-text-stroke:1.5px_#D4AF37] drop-shadow-[0_0_25px_rgba(212,175,55,0.8)] md:drop-shadow-[0_0_50px_rgba(212,175,55,0.5)] text-center px-4">
+        About Us
+      </h1>
 
-        /* --- MAIN WRAPPER (Forces Black Background) --- */
-        .page-wrapper {
-          background-color: #000000; /* Force Black */
-          color: white;
-          font-family: 'Geist', sans-serif;
-          height: 100vh;
-          width: 100vw;
-          overflow: hidden; /* No scroll */
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-        }
+      <div className="z-10 flex w-[90%] lg:w-[80%] max-w-[1200px] flex-col items-center justify-between gap-10 lg:flex-row lg:gap-[5%]">
+        
+        {/* Text Section */}
+        <div className="flex flex-[1.2] flex-col lg:block text-center lg:text-left">
+          <div className="mx-auto mb-[20px] h-[3px] w-[100px] bg-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.8)] lg:mx-0 lg:mb-[30px]"></div>
 
-        /* --- TITLE --- */
-        .main-title {
-          font-size: clamp(3rem, 6vw, 5rem); /* Responsive size */
-          font-weight: 900;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          margin-bottom: 5vh;
-          z-index: 10;
-          
-          /* OUTLINE EFFECT: Black text on Black background = Invisible, 
-             so only the Gold Stroke shows */
-          color: #000; 
-          -webkit-text-stroke: 1.5px #D4AF37; 
-        }
+          <p className="mb-5 text-justify text-[clamp(0.9rem,1.1vw,1.1rem)] leading-[1.8] text-[#cccccc] lg:text-justify max-lg:text-center">
+            <span className="font-bold text-[#D4AF37]">Solvify Club</span> is one
+            of the recently initiated clubs of the CSE department, NMIT! It is
+            not only a club but also a community that brings people from
+            different mind-sets all together, with the motto to tackle real
+            world challenges.
+          </p>
 
-        /* --- LAYOUT CONTAINER --- */
-        .content-row {
-          display: flex;
-          width: 80%;
-          max-width: 1200px;
-          align-items: center;
-          justify-content: space-between;
-          gap: 5%;
-          z-index: 10;
-        }
+          <p className="mb-5 text-justify text-[clamp(1.1rem,1.3vw,1.3rem)] font-medium leading-[1.8] text-[#D4AF37] lg:text-justify max-lg:text-center">
+            Prioritising continuous learning, the club has also given an
+            opportunity to its members to explore, learn and experience in the
+            field of both tech and real world entities, fostering innovation and
+            creative thinking.
+          </p>
+        </div>
 
-        /* --- LEFT COLUMN (Text) --- */
-        .text-col {
-          flex: 1.2;
-        }
-
-        .gold-divider {
-          width: 100px;
-          height: 3px;
-          background-color: #D4AF37;
-          margin-bottom: 30px;
-        }
-
-        .desc-text {
-          font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-          line-height: 1.8;
-          color: #cccccc;
-          margin-bottom: 20px;
-          text-align: justify;
-        }
-
-        /* Special styling for the second paragraph */
-        .gold-highlight-text {
-          font-size: clamp(1.1rem, 1.3vw, 1.3rem); /* Increased font size */
-          line-height: 1.8;
-          color: #D4AF37; /* Gold Color */
-          margin-bottom: 20px;
-          text-align: justify;
-          font-weight: 500;
-        }
-
-        .highlight-span {
-          color: #D4AF37;
-          font-weight: bold;
-        }
-
-        /* --- RIGHT COLUMN (Cards) --- */
-        .cards-col {
-          flex: 0.8;
-          display: flex;
-          gap: 30px;
-          justify-content: center;
-        }
-
-        .gold-card {
-          position: relative;
-          width: 180px;
-          height: 180px;
-          background: linear-gradient(135deg, #E6C25B 0%, #B8860B 100%);
-          border-radius: 25px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          
-          /* WHITE SHADOW BEHIND CARD */
-          box-shadow: 12px 12px 0px #ffffff;
-        }
-
-        .card-icon {
-          width: 60px;
-          height: 60px;
-          margin-bottom: 15px;
-          object-fit: contain;
-        }
-
-        .card-label {
-          color: #1a1a1a;
-          font-weight: 800;
-          font-size: 16px;
-          line-height: 1.2;
-        }
-
-        /* --- MOBILE RESPONSIVENESS --- */
-        @media (max-width: 900px) {
-          .content-row {
-            flex-direction: column;
-            width: 90%;
-            text-align: center;
-          }
-          .text-col {
-            margin-bottom: 40px;
-          }
-          .gold-divider {
-            margin: 0 auto 20px auto;
-          }
-          .desc-text, .gold-highlight-text {
-            text-align: center;
-          }
-          .gold-card {
-            width: 140px;
-            height: 140px;
-            box-shadow: 8px 8px 0px #ffffff;
-          }
-          .main-title {
-            font-size: 3rem;
-          }
-        }
-      `}</style>
-
-      <div className="page-wrapper">
-        <h1 className="main-title">ABOUT US</h1>
-
-        <div className="content-row">
-          {/* Left Text */}
-          <div className="text-col">
-            <div className="gold-divider"></div>
-            <p className="desc-text">
-              <span className="highlight-span">Solvify Club</span> is one of the recently initiated clubs of the CSE department, NMIT! 
-              It is not only a club but also a community that brings people from different 
-              mind-sets all together, with the motto to tackle real world challenges.
-            </p>
-            {/* Highlighting the latter sentence/paragraph in gold with larger font */}
-            <p className="gold-highlight-text">
-              Prioritising continuous learning, the club has also given an opportunity 
-              to its members to explore, learn and experience in the field of both tech 
-              and real world entities, fostering innovation and creative thinking.
-            </p>
-          </div>
-
-          {/* Right Cards */}
-          <div className="cards-col">
-            <div className="gold-card">
-              <img src="/Components for Website/About_us_comp1.svg" alt="Community" className="card-icon" />
-              <span className="card-label">Community &<br/>Connection</span>
-            </div>
-
-            <div className="gold-card">
-              <img src="/Components for Website/About_us_comp2.svg" alt="Innovation" className="card-icon" />
-              <span className="card-label">Innovation &<br/>Creativity</span>
-            </div>
+        {/* Image Section */}
+        <div className="flex flex-[0.8] justify-center gap-[30px] w-full">
+          {/* Golden Photo Frame Wrapper */}
+          <div
+            onClick={toggleModal} // Click handler to open modal
+            className="
+              relative inline-block p-[2px]
+              bg-gradient-to-br from-[#F2D16B] to-[#BA8A0A]
+              rounded-[18px]
+              shadow-[0_0_55px_rgba(242,209,107,0.9)]
+              transition-all duration-300 ease-out
+              cursor-pointer 
+              group-hover:shadow-[0_0_55px_rgba(242,209,107,0.9)]
+              hover:scale-[1.03]
+              max-w-full
+            "
+          >
+            <img
+              src="/Components for Website/AboutUsComp1.jpeg"
+              alt="Community"
+              className="
+                block
+                max-h-[280px] md:max-h-[360px] w-auto
+                object-contain
+                rounded-[12px]
+                transition-transform duration-500
+                max-w-full
+              "
+            />
           </div>
         </div>
       </div>
-    </>
+
+      {/* --- FULL SCREEN MODAL --- */}
+      {isModalOpen && (
+        <div 
+          
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[0_0_55px_rgba(242,209,107,0.9)]/40 p-4 backdrop-blur-sm transition-opacity duration-300"
+          onClick={toggleModal} // Clicking background closes modal
+        >
+          {/* Close Button */}
+          <button 
+            
+            className="absolute top-5 right-5 z-[10000] p-2 text-[#D4AF37]  transition-colors hover:text-[#F2D16B] drop-shadow-[0_0_5px_rgba(212,175,55,0.8)]"
+            onClick={toggleModal}
+          >
+            <X size={32} />
+          </button>
+
+          {/* Expanded Image */}
+          <img 
+            src="/Components for Website/AboutUsComp1.jpeg" 
+            alt="Community Fullscreen" 
+            className="max-h-[85vh] max-w-full rounded-lg object-contain shadow-[0_0_50px_rgba(212,175,55,0.5)]"
+            onClick={(e) => e.stopPropagation()} // Prevent clicking image from closing modal
+          />
+        </div>
+      )}
+
+    </div>
   );
 };
 
