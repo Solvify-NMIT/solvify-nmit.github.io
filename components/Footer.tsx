@@ -1,68 +1,127 @@
 "use client"
+import Link from "next/link";
 
 const Footer = () => {
   function handleSocial(social: string) {
     if (social === "instagram") {
       window.open("https://www.instagram.com/solvify_nmit/", "_blank");
     }
+    else if (social === "linkedin") {
+      window.open("https://www.linkedin.com/company/solvify-club-nmit/", "_blank");
+    }
     else if (social === "github") {
       window.open("https://github.com/Solvify-NMIT", "_blank");
     }
-    else if (social === "linkedin") {
-      window.open("https://www.linkedin.com/company/solvify-club-nmit/posts/?feedView=all", "_blank");
-    }
   }
 
-  return <div className="min-full-screen p-5 flex flex-col justify-center items-center gap-5 bg-black text-white">
-    <div className="w-max flex flex-col sm:flex-row gap-5 sm:gap-20 sm:justify-center items-center sm:items-start">
-      <div className="w-max text-3xl flex justify-start gap-2">
-        <img src="/Components for Website/solvify_logo.png" alt="solvify_logo" className="w-10" />
-        <h1 className="font-bold text-white text-center sm:text-left">Solvify</h1>
-      </div>
-      <div className="w-max">
-        <h2 className="text-2xl text-amber-300 text-center sm:text-left font-bold">Quick links</h2>
-        <ul className="pl-10 sm:pl-5 pt-3 w-max list-disc">
-          <li className="cursor-pointer hover:text-amber-300">Home</li>
-          <li className="cursor-pointer hover:text-amber-300">About Us</li>
-          <li className="cursor-pointer hover:text-amber-300">Events</li>
-          <li className="cursor-pointer hover:text-amber-300">Projects</li>
-          <li className="cursor-pointer hover:text-amber-300">Team</li>
-          <li className="cursor-pointer hover:text-amber-300">Feed</li>
-        </ul>
-      </div>
-      <div className="w-max">
-        <h2 className="text-2xl text-amber-300 text-center sm:text-left font-bold">Socials</h2>
-        <ul className="pt-3 w-full flex items-center gap-5">
-          <li className="w-8 text-white cursor-pointer hover:text-amber-300" onClick={() => handleSocial("instagram")}>
-            <svg fill="currentColor" viewBox="0 0 24 24" >
-              <path fillRule="evenodd" clipRule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" />
-              <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" />
-              <path fillRule="evenodd" clipRule="evenodd"
-                d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
+  return (
+    <footer className="w-full text-white bg-black py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-8">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <img
+                src="/Components for Website/solvify_logo.png"
+                alt="solvify_logo"
+                className="size-12"
               />
-            </svg>
-          </li>
-          <li className="w-8 text-white cursor-pointer hover:text-amber-300" onClick={() => handleSocial("linkedin")}>
-            <svg viewBox="0 0 24 24" fill="currentColor" >
-              <path d="M6.5 8C7.32843 8 8 7.32843 8 6.5C8 5.67157 7.32843 5 6.5 5C5.67157 5 5 5.67157 5 6.5C5 7.32843 5.67157 8 6.5 8Z" />
-              <path d="M5 10C5 9.44772 5.44772 9 6 9H7C7.55228 9 8 9.44771 8 10V18C8 18.5523 7.55228 19 7 19H6C5.44772 19 5 18.5523 5 18V10Z" />
-              <path d="M11 19H12C12.5523 19 13 18.5523 13 18V13.5C13 12 16 11 16 13V18.0004C16 18.5527 16.4477 19 17 19H18C18.5523 19 19 18.5523 19 18V12C19 10 17.5 9 15.5 9C13.5 9 13 10.5 13 10.5V10C13 9.44771 12.5523 9 12 9H11C10.4477 9 10 9.44772 10 10V18C10 18.5523 10.4477 19 11 19Z" />
-              <path fillRule="evenodd" clipRule="evenodd"
-                d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z" />
-            </svg>
-          </li>
-          <li className="w-8 text-white cursor-pointer hover:text-amber-300" onClick={() => handleSocial("github")}>
-            <svg viewBox="0 0 20 20" fill="currentColor" >
-              <path d="M10 1c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051-.799-.227-1.655-.341-2.505-.345-.85.004-1.705.118-2.503.345-1.911-1.326-2.751-1.051-2.751-1.051-.543 1.412-.2 2.455-.096 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493C2.867 19.627 0 15.783 0 11.253 0 5.59 4.477 1 10 1z" />
-            </svg>
-          </li>
-        </ul>
+              <div>
+                <h1 className="text-xl md:text-3xl font-bold text-amber-300">SOLVIFY</h1>
+                <p className="text-sm text-white">Club @NMIT</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-end gap-8">
+            <div className="flex flex-col gap-3">
+              <div className="flex justify-center gap-5">
+                <ul className="flex flex-col gap-2 text-lg text-white">
+                  <li>
+                    <Link href="#home" className="hover:text-amber-300 transition">
+                      HOME
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#about" className="hover:text-amber-300 transition">
+                      ABOUT
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#events" className="hover:text-amber-300 transition">
+                      EVENTS
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#contact us " className="hover:text-amber-300 transition">
+                      Contact Us
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="py-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
+            <Link
+              href="mailto:solvify@nmit.ac.in"
+              className="flex items-center gap-2 text-white hover:text-white transition"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <path d="M22 6l-10 7L2 6" fill="none" stroke="currentColor" strokeWidth="2" />
+              </svg>
+              solvify@nmit.ac.in
+            </Link>
+          </div>
+
+          <div className="flex justify-center gap-4 flex-wrap">
+            <button
+              onClick={() => handleSocial("instagram")}
+              className="w-10 h-10 flex items-center justify-center rounded-full border text-amber-300 border-amber-300 hover:scale-110 transition cursor-pointer"
+              aria-label="instagram"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.013-3.583.07-4.849c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z" />
+              </svg>
+            </button>
+
+            <button
+              onClick={() => handleSocial("linkedin")}
+              className="w-10 h-10 flex items-center justify-center rounded-full border text-amber-300 border-amber-300 hover:scale-110 transition cursor-pointer"
+              aria-label="linkedin"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.91v8.37h2.91v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.91M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+              </svg>
+            </button>
+
+            <button
+              onClick={() => handleSocial("github")}
+              className="w-10 h-10 flex items-center justify-center rounded-full border text-amber-300 border-amber-300 hover:scale-110 transition cursor-pointer"
+              aria-label="github"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div className="pt-5 text-center">
+          <p className="text-sm text-white">
+            Made with <span>💛</span> by Team SOLVIFY
+          </p>
+          <p className="text-xs text-white mt-2">Copyright ©2025, All rights reserved.</p>
+        </div>
       </div>
-    </div>
-    <div className="w-max text-center">
-      <h2>© 2025 Solvify. All rights reserved.</h2>
-    </div>
-  </div>
+    </footer>
+  )
 };
 
 export default Footer;
