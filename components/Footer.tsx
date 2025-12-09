@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 
 const Footer = () => {
   function handleSocial(social: string) {
@@ -16,7 +17,6 @@ const Footer = () => {
   return (
     <footer className="w-full text-white bg-black py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-8">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
@@ -27,64 +27,46 @@ const Footer = () => {
               />
               <div>
                 <h1 className="text-xl md:text-3xl font-bold text-amber-300">SOLVIFY</h1>
-                <p className="text-sm text-gray-400">Student Club @NMIT</p>
+                <p className="text-sm text-white">Club @NMIT</p>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col md:flex-row justify-end gap-8">
             <div className="flex flex-col gap-3">
-              <h3 className="text-lg font-bold text-amber-300 text-center">MENU</h3>
               <div className="flex justify-center gap-5">
-                <ul className="flex flex-col gap-2 text-sm text-gray-400">
-                <li>
-                  <a href="#home" className="hover:text-amber-300 transition">
-                    HOME
-                  </a>
-                </li>
-                <li>
-                  <a href="#about" className="hover:text-amber-300 transition">
-                    ABOUT
-                  </a>
-                </li>
-                <li>
-                  <a href="#events" className="hover:text-amber-300 transition">
-                    EVENTS
-                  </a>
-                </li>
-                <li>
-                  <a href="#projects" className="hover:text-amber-300 transition">
-                    PROJECTS
-                  </a>
-                </li>
-              </ul>
-              <ul className="flex flex-col gap-2 text-sm text-gray-400">
-                <li>
-                  <a href="#team" className="hover:text-amber-300 transition">
-                    TEAM
-                  </a>
-                </li>
-                <li>
-                  <a href="#feed" className="hover:text-amber-300 transition">
-                    FEED
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" className="hover:text-amber-300 transition">
-                    CONTACT
-                  </a>
-                </li>
-              </ul>
+                <ul className="flex flex-col gap-2 text-lg text-white">
+                  <li>
+                    <Link href="#home" className="hover:text-amber-300 transition">
+                      HOME
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#about" className="hover:text-amber-300 transition">
+                      ABOUT
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#events" className="hover:text-amber-300 transition">
+                      EVENTS
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#contact us " className="hover:text-amber-300 transition">
+                      Contact Us
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="py-8 border-t border-gray-800">
+        <div className="py-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
-            <a
-              href="mailto:dscvitellore@gmail.com"
-              className="flex items-center gap-2 text-gray-400 hover:text-white transition"
+            <Link
+              href="mailto:solvify@nmit.ac.in"
+              className="flex items-center gap-2 text-white hover:text-white transition"
             >
               <svg
                 className="w-5 h-5"
@@ -94,8 +76,8 @@ const Footer = () => {
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <path d="M22 6l-10 7L2 6" fill="none" stroke="currentColor" strokeWidth="2" />
               </svg>
-              support@solvify.com
-            </a>
+              solvify@nmit.ac.in
+            </Link>
           </div>
 
           <div className="flex justify-center gap-4 flex-wrap">
@@ -132,10 +114,10 @@ const Footer = () => {
         </div>
 
         <div className="pt-5 text-center">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-white">
             Made with <span>💛</span> by Team SOLVIFY
           </p>
-          <p className="text-xs text-gray-400 mt-2">Copyright ©2025, All rights reserved.</p>
+          <p className="text-xs text-white mt-2">Copyright ©2025, All rights reserved.</p>
         </div>
       </div>
     </footer>
