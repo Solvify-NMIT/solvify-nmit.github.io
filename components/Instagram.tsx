@@ -4,6 +4,20 @@
 import { FC, useRef, useState, useEffect, MutableRefObject } from 'react';
 import { mat4, quat, vec2, vec3 } from 'gl-matrix';
 
+const Instagram = () => {
+  return <div className="mb-22 bg-black" style={{ height: '600px', position: 'relative' }}>
+    <div>
+      <h1 className='my-10 text-3xl sm:text-5xl text-amber-300 font-bold text-center'>
+        DIVE INTO OUR RECENT UPDATES
+      </h1>
+    </div>
+    <InfiniteMenu items={items} />
+    <div className='w-full flex justify-center relative'>
+      <h4 className='my-10 text-xl text-amber-300 text-center absolute bottom-0'>Drag to move!</h4>
+    </div>
+  </div>
+}
+
 const items = [
   {
     image: '/instaPosts/1.png',
@@ -65,196 +79,7 @@ const items = [
     title: '',
     description: ''
   },
-  {
-    image: '/instaPosts/11.png',
-    link: 'https://www.instagram.com/p/DH5OT8hS3j5/?img_index=2',
-    title: '',
-    description: ''
-  },
-  {
-    image: '/instaPosts/12.png',
-    link: 'https://www.instagram.com/p/DFRkccoSQpf/',
-    title: '',
-    description: ''
-  },
-  {
-    image: '/instaPosts/13.png',
-    link: 'https://www.instagram.com/p/DB0GbVvy2Hp/',
-    title: '',
-    description: ''
-  },
-  {
-    image: '/instaPosts/14.png',
-    link: 'https://www.instagram.com/p/C-rI9rdSbxq/',
-    title: '',
-    description: ''
-  },
-  {
-    image: '/instaPosts/15.png',
-    link: 'https://www.instagram.com/p/C6WFNdRLlHo/?img_index=1',
-    title: '',
-    description: ''
-  },
 ];
-
-// --- new: DotGrid component (renders dot-grid canvas and reacts to pointer) ---
-const DotGrid: FC<{ pointer: { x: number; y: number } | null }> = ({ pointer }) => {
-	// ...internal refs/state...
-	const canvasRef = useRef<HTMLCanvasElement | null>(null);
-	const rafRef = useRef<number | null>(null);
-	const dotsRef = useRef<{ x: number; y: number }[]>([]);
-	const visualPointer = useRef<{ x: number; y: number; a: number } | null>(null);
-
-	useEffect(() => {
-		const canvas = canvasRef.current!;
-		if (!canvas) return;
-
-		const ctx = canvas.getContext('2d')!;
-		let dpr = Math.min(2, window.devicePixelRatio || 1);
-
-		function resize() {
-			const w = canvas.clientWidth || 1;
-			const h = canvas.clientHeight || 1;
-			canvas.width = Math.round(w * dpr);
-			canvas.height = Math.round(h * dpr);
-			ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-			// recreate dot positions
-			const spacing = 28;
-			const cols = Math.ceil(w / spacing) + 1;
-			const rows = Math.ceil(h / spacing) + 1;
-			const dots: { x: number; y: number }[] = [];
-			for (let r = 0; r < rows; r++) {
-				for (let c = 0; c < cols; c++) {
-					dots.push({ x: c * spacing, y: r * spacing });
-				}
-			}
-			dotsRef.current = dots;
-		}
-
-		resize();
-		window.addEventListener('resize', resize);
-		return () => {
-			window.removeEventListener('resize', resize);
-		};
-	}, []);
-
-	useEffect(() => {
-		// update visualPointer smoothly towards pointer prop, used for easing effect
-		if (pointer) {
-			if (!visualPointer.current) visualPointer.current = { x: pointer.x, y: pointer.y, a: 1 };
-			visualPointer.current.x = pointer.x;
-			visualPointer.current.y = pointer.y;
-			visualPointer.current.a = 1;
-		} else if (visualPointer.current) {
-			// fade out target alpha
-			visualPointer.current.a = Math.max(0, visualPointer.current.a - 0.08);
-			if (visualPointer.current.a <= 0.01) visualPointer.current = null;
-		}
-	}, [pointer]);
-
-	useEffect(() => {
-		const canvas = canvasRef.current!;
-		if (!canvas) return;
-		const ctx = canvas.getContext('2d')!;
-		let running = true;
-
-		const baseColor = '252, 208, 69'; // amber-ish RGB (approx amber-300)
-		const baseRadius = 2;
-		const baseAlpha = 0.12;
-		const hoverRadius = 90;
-
-		function draw() {
-			if (!running) return;
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			const dots = dotsRef.current;
-			const vp = visualPointer.current;
-
-			for (let i = 0; i < dots.length; i++) {
-				const d = dots[i];
-				let r = baseRadius;
-				let a = baseAlpha;
-
-				if (vp) {
-					const dx = d.x - vp.x;
-					const dy = d.y - vp.y;
-					const dist = Math.sqrt(dx * dx + dy * dy);
-					if (dist < hoverRadius) {
-						const t = 1 - dist / hoverRadius;
-						// ease
-						const ease = t * t * (3 - 2 * t);
-						r = baseRadius + ease * 4;
-						a = Math.min(0.85, baseAlpha + ease * 0.9 * vp.a);
-					}
-				}
-
-				ctx.beginPath();
-				ctx.fillStyle = `rgba(${baseColor}, ${a})`;
-				ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
-				ctx.fill();
-			}
-			rafRef.current = requestAnimationFrame(draw);
-		}
-
-		rafRef.current = requestAnimationFrame(draw);
-		return () => {
-			running = false;
-			if (rafRef.current) cancelAnimationFrame(rafRef.current);
-		};
-	}, []);
-
-	return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }} />;
-};
-// --- end DotGrid ---
-
-const Instagram = () => {
-  // track pointer in local coordinates relative to this container (so DotGrid can react)
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [pointer, setPointer] = useState<{ x: number; y: number } | null>(null);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const el = containerRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    setPointer({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-  const handleMouseLeave = () => setPointer(null);
-
-  return (
-    <div
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="mb-22 relative overflow-hidden rounded-lg"
-      style={{ height: '600px' }}
-    >
-      {/* decorative background glows (pointer-events-none so they don't interfere) */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        {/* reactive dot grid */}
-        <DotGrid pointer={pointer} />
-
-         <div className="absolute inset-0 bg-linear-to-b from-transparent via-amber-50/5 to-transparent" />
-       </div>
-
-      <div className="relative z-10 px-6">
-        <div>
-          <h1 className='my-10 text-3xl sm:text-5xl text-amber-300 font-bold text-center'>
-            DIVE INTO OUR RECENT UPDATES
-          </h1>
-        </div>
-
-        {/* canvas container with soft border and shadow for a cleaner look */}
-        <div className="relative w-full h-[420px] rounded-md overflow-hidden drop-shadow-2xl bg-transparent border border-amber-100/10">
-          <InfiniteMenu items={items} />
-        </div>
-
-        <div className='w-full flex justify-center relative'>
-          <h4 className='my-10 text-xl text-amber-300 text-center absolute bottom-0'>Drag to move!</h4>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const discVertShaderSource = `#version 300 es
 
@@ -1359,15 +1184,6 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
         ref={canvasRef}
         className="cursor-grab w-full h-full overflow-hidden relative outline-none active:cursor-grabbing"
       />
-
-      {/* lightweight amber overlay decorations on top of canvas (no pointer events) */}
-      {/* <div className="absolute inset-0 pointer-events-none z-20">
-        <div className="absolute left-10 bottom-10 w-12 h-12 bg-amber-300 opacity-10 rounded-sm blur-sm transform rotate-45 animate-pulse" />
-        <div className="absolute right-10 top-10 w-12 h-12 bg-amber-300 opacity-10 rounded-sm blur-sm transform rotate-45 animate-pulse" />
-        <div className="absolute right-10 bottom-10 w-14 h-14 bg-amber-300 opacity-8 rounded-full blur-md animate-pulse" />
-        <div className="absolute left-10 top-10 w-14 h-14 bg-amber-300 opacity-8 rounded-full blur-md animate-pulse" />
-        <div className="absolute inset-0 bg-linear-to-t from-black/5 via-transparent to-black/0" />
-      </div> */}
 
       {activeItem && (
         <>
