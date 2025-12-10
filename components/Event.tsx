@@ -77,7 +77,7 @@ const Event = () => {
 </button>
 
 
-        {/* CARD SLIDER CONTAINER */}
+        {/* CARD SLIDER CONTAINER.*/}
         <div className="relative w-full max-w-6xl overflow-hidden h-[520px]">
 
           {/* FIRST 2 CARDS */}
