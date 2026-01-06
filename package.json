@@ -9,20 +9,32 @@
     "lint": "eslint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "cloudinary": "^2.8.0",
     "framer-motion": "^12.23.24",
     "gl-matrix": "^3.4.4",
     "lucide-react": "^0.555.0",
+=======
+    "@types/react-slick": "^0.23.13",
+    "cloudinary": "^2.8.0",
+    "framer-motion": "^12.24.2",
+    "gl-matrix": "^3.4.4",
+    "lucide-react": "^0.562.0",
+>>>>>>> 3045b64fb2cd38d045a63d7cd78b7b6dad00a0cc
     "mongoose": "^9.0.0",
     "next": "16.0.4",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "react-intersection-observer": "^10.0.0",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.9.11",
     "eslint": "^9",
     "eslint-config-next": "16.0.4",
     "tailwindcss": "^4",

@@ -12,6 +12,7 @@ import Loader from "@/components/Loader";
 import { useState, useEffect } from "react"; 
 
 export default function Home() {
+<<<<<<< HEAD
     const [introComplete, setIntroComplete] = useState(false);
     const [contentVisible, setContentVisible] = useState(false);
     const [startDecipher, setStartDecipher] = useState(false);
@@ -72,3 +73,16 @@ export default function Home() {
         </>
     );
 }
+=======
+  return (
+    <>
+    <HomePage/>
+     <AboutUs/>
+     <Event/>
+     <TeamHome/>
+     {/* <Instagram/> */}
+    <ContactUsHome/>
+    </>
+  );
+}
+>>>>>>> 3045b64fb2cd38d045a63d7cd78b7b6dad00a0cc
