@@ -13,7 +13,7 @@ export default function Home() {
      <AboutUs/>
      <Event/>
      <TeamHome/>
-     <Instagram/>
+     {/* <Instagram/> */}
     <ContactUsHome/>
     </>
   );
