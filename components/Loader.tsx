@@ -24,17 +24,17 @@ const TerminalLoader = () => {
     let accumulatedDelay = 0;
 
     bootSequence.forEach((line, index) => {
-      const stepDelay = Math.random() * 400 + 800; 
+      const stepDelay = Math.random() * 400 + 800;
       accumulatedDelay += stepDelay;
-      
+
       const timeout = setTimeout(() => {
         setLines((prev) => {
-            const newLines = [...prev, line];
-            if (newLines.length > 5) return newLines.slice(newLines.length - 5);
-            return newLines;
+          const newLines = [...prev, line];
+          if (newLines.length > 5) return newLines.slice(newLines.length - 5);
+          return newLines;
         });
       }, accumulatedDelay);
-      
+
       timeouts.push(timeout);
 
       if (index === bootSequence.length - 1) {
@@ -66,8 +66,8 @@ const FlyingLogo = ({ sequenceStage }: { sequenceStage: number }) => {
   // Stage 3: Glide to Navbar
   const isContinuous = sequenceStage === 2;
   const isExit = sequenceStage === 3;
-  
-  const customTranslateClass = 'translate-x-[calc(-50%+5.5vw)]'; 
+
+  const customTranslateClass = 'translate-x-[calc(-50%+5.5vw)]';
 
   return (
     <motion.div
@@ -75,8 +75,8 @@ const FlyingLogo = ({ sequenceStage }: { sequenceStage: number }) => {
       key="flying-logo"
       initial={{ scale: 0, rotate: -180, opacity: 0, zIndex: 999 }}
       animate={{
-        rotate: sequenceStage >= 2 ? 1080 : 0, 
-        scale: sequenceStage === 2 ? 1.0 : 0.8, 
+        rotate: sequenceStage >= 2 ? 1080 : 0,
+        scale: sequenceStage === 2 ? 1.0 : 0.8,
         opacity: sequenceStage >= 2 ? 1 : 0,
         x: isExit ? -15 : 0,
         y: isExit ? -400 : 0,
@@ -103,24 +103,24 @@ const FlyingLogo = ({ sequenceStage }: { sequenceStage: number }) => {
 
 // --- MAIN LOADER COMPONENT ---
 const Loader = ({ onIntroComplete }: { onIntroComplete: () => void }) => {
-  const [stage, setStage] = useState(0); 
-  const [isIntroDone, setIsIntroDone] = useState(false); 
+  const [stage, setStage] = useState(0);
+  const [isIntroDone, setIsIntroDone] = useState(false);
 
   useEffect(() => {
     // Stage 1: Fill starts
     const t1 = setTimeout(() => setStage(1), 5000);
-    
+
     // Stage 2: Zoom and Logo Spin start
-    const t2 = setTimeout(() => setStage(2), 7000); 
-    
+    const t2 = setTimeout(() => setStage(2), 7000);
+
     // Stage 3: Logo starts gliding to top
-    const t3 = setTimeout(() => setStage(3), 8200); 
+    const t3 = setTimeout(() => setStage(3), 8200);
 
     // Final Handover - Snappy exit immediately after the logo reaches the top
     const finalHideTimer = setTimeout(() => {
-        setIsIntroDone(true);
-        if (typeof onIntroComplete === 'function') onIntroComplete(); 
-    }, 8800); 
+      setIsIntroDone(true);
+      if (typeof onIntroComplete === 'function') onIntroComplete();
+    }, 8800);
 
     return () => {
       clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(finalHideTimer);
@@ -131,14 +131,14 @@ const Loader = ({ onIntroComplete }: { onIntroComplete: () => void }) => {
     visible: { scale: 1, x: 0, opacity: 1 },
     // This handles the explosive zoom-in through the text
     zoomInContinuous: {
-      scale: 60, 
-      x: '-175vw', 
+      scale: 60,
+      x: '-175vw',
       opacity: 0,
-      transition: { 
-        duration: 1.4, 
-        ease: [0.7, 0, 0.3, 1],
-        delay: 0.1 
-      } 
+      transition: {
+        duration: 1.4,
+        ease: [0.7, 0, 0.3, 1] as [number, number, number, number],
+        delay: 0.1
+      }
     }
   };
 
@@ -146,7 +146,7 @@ const Loader = ({ onIntroComplete }: { onIntroComplete: () => void }) => {
   const currentAnimation = stage >= 2 ? "zoomInContinuous" : "visible";
 
   return (
-    <div className={`fixed inset-0 z-[100] bg-[#050505] transition-opacity duration-500 ${isIntroDone ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+    <div className={`fixed inset-0 z-100 bg-[#050505] transition-opacity duration-500 ${isIntroDone ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
       <AnimatePresence>
         {/* We keep the SVG background text mounted through the zoom-in phase */}
         {stage < 3 && (
@@ -164,22 +164,22 @@ const Loader = ({ onIntroComplete }: { onIntroComplete: () => void }) => {
 
             <div className="z-10 text-center flex flex-col items-center w-full select-none">
               <div className="relative w-full flex justify-center items-center">
-                  <svg viewBox="0 0 1320 350" className="w-[95vw] max-w-[1600px] h-auto overflow-visible">
-                    <defs>
-                      <clipPath id="text-fill-clip">
-                        <rect x="0" y="0" width={stage >= 1 ? "100%" : "0%"} height="100%" className="transition-all ease-in-out" style={{ transitionDuration: '2000ms' }} />
-                      </clipPath>
-                    </defs>
-                    <text x="50%" y="50%" dy=".35em" textAnchor="middle" className="font-bebas text-[19vw] md:text-[200px] tracking-wide stroke-[#FFD700] stroke-[3px] fill-transparent" style={{ strokeDasharray: '1035px', strokeDashoffset: '1035px', animation: "drawStroke 5s ease-in-out forwards" }}>
-                      SOLVIFY NMIT
-                    </text>
-                    <text x="50%" y="50%" dy=".35em" textAnchor="middle" clipPath="url(#text-fill-clip)" className="font-bebas text-[19vw] md:text-[200px] tracking-wide fill-white stroke-none">
-                      SOLVIFY NMIT
-                    </text>
-                  </svg>
+                <svg viewBox="0 0 1320 350" className="w-[95vw] max-w-[1600px] h-auto overflow-visible">
+                  <defs>
+                    <clipPath id="text-fill-clip">
+                      <rect x="0" y="0" width={stage >= 1 ? "100%" : "0%"} height="100%" className="transition-all ease-in-out" style={{ transitionDuration: '2000ms' }} />
+                    </clipPath>
+                  </defs>
+                  <text x="50%" y="50%" dy=".35em" textAnchor="middle" className="font-bebas text-[19vw] md:text-[200px] tracking-wide stroke-[#FFD700] stroke-[3px] fill-transparent" style={{ strokeDasharray: '1035px', strokeDashoffset: '1035px', animation: "drawStroke 5s ease-in-out forwards" }}>
+                    SOLVIFY NMIT
+                  </text>
+                  <text x="50%" y="50%" dy=".35em" textAnchor="middle" clipPath="url(#text-fill-clip)" className="font-bebas text-[19vw] md:text-[200px] tracking-wide fill-white stroke-none">
+                    SOLVIFY NMIT
+                  </text>
+                </svg>
               </div>
             </div>
-            
+
             <style jsx global>{`
               @keyframes drawStroke { 0% { stroke-dashoffset: 1035px; } 100% { stroke-dashoffset: 0px; } }
             `}</style>
