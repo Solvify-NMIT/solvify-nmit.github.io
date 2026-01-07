@@ -1,6 +1,6 @@
 [
   {
-    "name": "Hackathon 2024",
+    "name": "Byte Battle",
     "photos": [
       {
         "img": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=800&fit=crop"
@@ -28,7 +28,7 @@
     ]
   },
   {
-    "name": "Code Challenge",
+    "name":"Coding Battle",
     "photos": [
       {
         "img": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=800&fit=crop"
