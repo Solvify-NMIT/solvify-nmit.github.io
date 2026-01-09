@@ -39,7 +39,7 @@ const Event = () => {
   };
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-black font-['Geist',sans-serif] text-white py-12 md:py-0">
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-[#050505] text-white py-12 md:py-0">
       {/* Title Section */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -48,10 +48,10 @@ const Event = () => {
         transition={{ duration: 0.6 }}
         className="mb-8 md:mb-[5vh] z-10 w-full"
       >
-        <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-black uppercase tracking-[2px] text-black [-webkit-text-stroke:1.5px_#D4AF37] drop-shadow-[0_0_25px_rgba(212,175,55,0.8)] md:drop-shadow-[0_0_50px_rgba(212,175,55,0.5)] text-center px-4">
+        <h1 className="font-bebas text-[clamp(2.5rem,6vw,5rem)] font-black uppercase tracking-wide text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] text-center px-4">
           Events
         </h1>
-        <div className="mx-auto mt-4 h-[3px] w-[100px] bg-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.8)]"></div>
+        <div className="mx-auto mt-4 h-[3px] w-[100px] bg-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.4)]"></div>
       </motion.div>
 
       {/* Carousel Container */}
@@ -62,7 +62,7 @@ const Event = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full h-full mx-auto mt-[5vh] p-4 pb-3 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#D4AF37] rounded-lg shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+          className="w-full h-full mx-auto mt-[5vh] p-4 pb-3 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#FFD700] rounded-lg shadow-[0_0_30px_rgba(255,215,0,0.3)]"
         >
           <Slider ref={sliderRef} {...settings}>
             {events.map((event, i) => {
@@ -72,7 +72,7 @@ const Event = () => {
                     key={`event${i}pic${j}`}
                     className="px-2"
                   >
-                    <div className="relative w-full aspect-square overflow-hidden rounded-lg border border-[#D4AF37]/30 shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:scale-[1.02]">
+                    <div className="relative w-full aspect-square overflow-hidden rounded-lg border border-[#FFD700]/30 shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,215,0,0.4)] hover:scale-[1.02]">
                       <Image
                         src={pic.img}
                         alt={`${event.name} - Photo ${j + 1}`}
@@ -94,9 +94,9 @@ const Event = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="relative w-full mx-auto mb-10 text-white mt-10"
+          className="relative w-full mx-auto mb-10 text-white mt-10 font-montserrat"
         >
-          <hr className="absolute top-[50%] left-0 w-full border-[#D4AF37]/50 border-2" />
+          <hr className="absolute top-[50%] left-0 w-full border-[#FFD700]/50 border-2" />
           <div className="relative flex flex-row justify-evenly items-center pt-2">
             {events.map((event, i) => {
               const isActive = Math.floor(slideIndex / 3) === i;
@@ -108,10 +108,10 @@ const Event = () => {
                 >
                   <div
                     className={`${isActive ? "w-8 h-8" : "w-4 h-4"
-                      } transition-all duration-300 rounded-md bg-[#D4AF37] shadow-[0_0_10px_rgba(212,175,55,0.6)] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.8)] ${isActive ? "scale-110" : "scale-100"
+                      } transition-all duration-300 rounded-md bg-[#FFD700] shadow-[0_0_10px_rgba(255,215,0,0.6)] group-hover:shadow-[0_0_15px_rgba(255,215,0,0.8)] ${isActive ? "scale-110" : "scale-100"
                       }`}
                   ></div>
-                  <p className="mt-3 text-center text-sm md:text-base font-medium text-[#D4AF37] min-w-max px-2">
+                  <p className="mt-3 text-center text-sm md:text-base font-medium text-[#FFD700] drop-shadow-[0_0_8px_rgba(255,215,0,0.3)] min-w-max px-2">
                     {event.name}
                   </p>
                 </div>
