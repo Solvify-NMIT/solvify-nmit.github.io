@@ -41,7 +41,7 @@ const TeamHome = () => {
       </div>
 
       {/* Team Members Section */}
-      <div className="w-[90%] lg:w-[85%] max-w-[1400px] mx-auto">
+      {/* <div className="w-[90%] lg:w-[85%] max-w-[1400px] mx-auto">
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -60,7 +60,7 @@ const TeamHome = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
