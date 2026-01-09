@@ -7,7 +7,7 @@ import { coreTeam, teamMembers } from "@/lib/data/teamData";
 
 const TeamHome = () => {
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-black font-['Geist',sans-serif] text-white py-12 md:py-16">
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-[#050505] text-white py-12 md:py-16">
       {/* Title Section */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -16,10 +16,10 @@ const TeamHome = () => {
         transition={{ duration: 0.6 }}
         className="mb-12 md:mb-16 z-10 w-full"
       >
-        <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-black uppercase tracking-[2px] text-black [-webkit-text-stroke:1.5px_#D4AF37] drop-shadow-[0_0_25px_rgba(212,175,55,0.8)] md:drop-shadow-[0_0_50px_rgba(212,175,55,0.5)] text-center px-4">
+        <h1 className="font-bebas text-[clamp(2.5rem,6vw,5rem)] font-black uppercase tracking-wide text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] text-center px-4">
           Meet The Team
         </h1>
-        <div className="mx-auto mt-4 h-[3px] w-[100px] bg-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.8)]"></div>
+        <div className="mx-auto mt-4 h-[3px] w-[100px] bg-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.4)]"></div>
       </motion.div>
 
       {/* Core Team Section */}
@@ -29,7 +29,7 @@ const TeamHome = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold text-[#D4AF37] mb-6 md:mb-8 text-center md:text-left"
+          className="font-montserrat text-2xl md:text-3xl font-bold text-[#FFD700] drop-shadow-[0_0_10px_rgba(255,215,0,0.4)] mb-6 md:mb-8 text-center md:text-left tracking-wide"
         >
           Core Team
         </motion.h2>
@@ -47,7 +47,7 @@ const TeamHome = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold text-[#D4AF37] mb-6 md:mb-8 text-center md:text-left"
+          className="font-montserrat text-2xl md:text-3xl font-bold text-[#FFD700] drop-shadow-[0_0_10px_rgba(255,215,0,0.4)] mb-6 md:mb-8 text-center md:text-left tracking-wide"
         >
           Team Members
         </motion.h2>

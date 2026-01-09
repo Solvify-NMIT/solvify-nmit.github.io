@@ -18,10 +18,10 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="flex flex-col bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#D4AF37] rounded-lg p-4 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all duration-300 hover:scale-[1.02] group"
+            className="flex flex-col bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#FFD700] rounded-lg p-4 shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:shadow-[0_0_30px_rgba(255,215,0,0.4)] transition-all duration-300 hover:scale-[1.02] group"
         >
             {/* Image Container */}
-            <div className="w-full border-2 border-[#D4AF37]/50 rounded-lg overflow-hidden mb-4">
+            <div className="w-full border-2 border-[#FFD700]/50 rounded-lg overflow-hidden mb-4">
                 <div className="relative w-full aspect-square">
                     <Image
                         src={member.img}
@@ -34,12 +34,12 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
             </div>
 
             {/* Name */}
-            <h2 className="text-xl md:text-2xl font-bold text-[#D4AF37] mb-1">
+            <h2 className="font-montserrat text-xl md:text-2xl font-bold text-[#FFD700] drop-shadow-[0_0_8px_rgba(255,215,0,0.3)] mb-1 tracking-wide">
                 {member.name}
             </h2>
 
             {/* Position */}
-            <h3 className="text-sm md:text-base text-[#cccccc] mb-4">
+            <h3 className="font-montserrat text-sm md:text-base text-white mb-4">
                 {member.position}
             </h3>
 
@@ -50,7 +50,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
                         href={member.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-6 h-6 text-[#D4AF37] hover:text-[#F2D16B] transition-colors duration-200 opacity-70 hover:opacity-100"
+                        className="w-6 h-6 text-[#FFD700] hover:text-[#FFF4B8] transition-all duration-200 opacity-70 hover:opacity-100 hover:drop-shadow-[0_0_8px_rgba(255,215,0,0.6)]"
                         aria-label={`${member.name}'s website`}
                     >
                         <Globe size={24} />
@@ -61,7 +61,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
                         href={member.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-6 h-6 text-[#D4AF37] hover:text-[#F2D16B] transition-colors duration-200 opacity-70 hover:opacity-100"
+                        className="w-6 h-6 text-[#FFD700] hover:text-[#FFF4B8] transition-all duration-200 opacity-70 hover:opacity-100 hover:drop-shadow-[0_0_8px_rgba(255,215,0,0.6)]"
                         aria-label={`${member.name}'s GitHub`}
                     >
                         <Github size={24} />
@@ -72,7 +72,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-6 h-6 text-[#D4AF37] hover:text-[#F2D16B] transition-colors duration-200 opacity-70 hover:opacity-100"
+                        className="w-6 h-6 text-[#FFD700] hover:text-[#FFF4B8] transition-all duration-200 opacity-70 hover:opacity-100 hover:drop-shadow-[0_0_8px_rgba(255,215,0,0.6)]"
                         aria-label={`${member.name}'s LinkedIn`}
                     >
                         <Linkedin size={24} />
