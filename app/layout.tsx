@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Montserrat, Titillium_Web } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 // 1. Headline Font: Bebas Neue
@@ -43,6 +44,7 @@ export default function RootLayout({
           <main>{children}</main>
           {/* Footer removed from here. It must be rendered inside the conditional block in page.tsx */}
         </div>
+        <Analytics />
       </body>
     </html>
   );
