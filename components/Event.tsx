@@ -55,14 +55,14 @@ const Event = () => {
       </motion.div>
 
       {/* Carousel Container */}
-      <div className="flex flex-col w-[90%] lg:w-[85%] max-w-[1400px] mx-auto">
+      <div className="flex flex-col w-[92%] sm:w-[90%] lg:w-[85%] max-w-[1400px] mx-auto">
         {/* Slider Wrapper */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full h-full mx-auto mt-[5vh] p-4 pb-3 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#FFD700] rounded-lg shadow-[0_0_30px_rgba(255,215,0,0.3)]"
+          className="w-full h-full mx-auto mt-[3vh] sm:mt-[5vh] p-3 sm:p-4 pb-2 sm:pb-3 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#FFD700] rounded-lg shadow-[0_0_30px_rgba(255,215,0,0.3)]"
         >
           <Slider ref={sliderRef} {...settings}>
             {events.map((event, i) => {
@@ -94,24 +94,24 @@ const Event = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="relative w-full mx-auto mb-10 text-white mt-10 font-montserrat"
+          className="relative w-full mx-auto mb-8 sm:mb-10 text-white mt-8 sm:mt-10 font-montserrat px-2 sm:px-0"
         >
           <hr className="absolute top-[50%] left-0 w-full border-[#FFD700]/50 border-2" />
-          <div className="relative flex flex-row justify-evenly items-center pt-2">
+          <div className="relative flex flex-row justify-evenly items-center pt-2 flex-wrap md:flex-nowrap gap-2 md:gap-0">
             {events.map((event, i) => {
               const isActive = Math.floor(slideIndex / 3) === i;
               return (
                 <div
                   key={`eventname${i}`}
                   onClick={() => sliderRef.current?.slickGoTo(i * 3)}
-                  className="flex flex-col items-center cursor-pointer group transition-all duration-300"
+                  className="flex flex-col items-center cursor-pointer group transition-all duration-300 min-w-0 flex-1 md:flex-initial"
                 >
                   <div
-                    className={`${isActive ? "w-8 h-8" : "w-4 h-4"
+                    className={`${isActive ? "w-5 h-5 md:w-8 md:h-8" : "w-3 h-3 md:w-4 md:h-4"
                       } transition-all duration-300 rounded-md bg-[#FFD700] shadow-[0_0_10px_rgba(255,215,0,0.6)] group-hover:shadow-[0_0_15px_rgba(255,215,0,0.8)] ${isActive ? "scale-110" : "scale-100"
                       }`}
                   ></div>
-                  <p className="mt-3 text-center text-sm md:text-base font-medium text-[#FFD700] drop-shadow-[0_0_8px_rgba(255,215,0,0.3)] min-w-max px-2">
+                  <p className="mt-2 sm:mt-3 text-center text-xs sm:text-sm md:text-base font-medium text-[#FFD700] drop-shadow-[0_0_8px_rgba(255,215,0,0.3)] px-1 sm:px-2 break-words max-w-[7rem] sm:max-w-none">
                     {event.name}
                   </p>
                 </div>
