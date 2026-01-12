@@ -171,10 +171,10 @@ const Loader = ({ onIntroComplete }: { onIntroComplete: () => void }) => {
                     </clipPath>
                   </defs>
                   <text x="50%" y="50%" dy=".35em" textAnchor="middle" className="font-bebas text-[19vw] md:text-[200px] tracking-wide stroke-[#FFD700] stroke-[3px] fill-transparent" style={{ strokeDasharray: '1035px', strokeDashoffset: '1035px', animation: "drawStroke 5s ease-in-out forwards" }}>
-                    SOLVIFY NMIT
+                    SOLVIFY
                   </text>
                   <text x="50%" y="50%" dy=".35em" textAnchor="middle" clipPath="url(#text-fill-clip)" className="font-bebas text-[19vw] md:text-[200px] tracking-wide fill-white stroke-none">
-                    SOLVIFY NMIT
+                    SOLVIFY
                   </text>
                 </svg>
               </div>

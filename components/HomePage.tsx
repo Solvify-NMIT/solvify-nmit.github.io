@@ -4,9 +4,9 @@ import React, { useState, useEffect, useCallback } from "react";
 
 // --- SUB-COMPONENT: SEQUENTIAL DECIPHER ---
 const SequentialDecipher = ({ text, startTrigger }: { text: string, startTrigger: boolean }) => {
-    const [displayText, setDisplayText] = useState(text.replace(/./g, ' ')); 
+    const [displayText, setDisplayText] = useState(text.replace(/./g, ' '));
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$#@%&";
-    
+
     const decipherLogic = useCallback(() => {
         if (!startTrigger) {
             setDisplayText(text.replace(/./g, ' '));
@@ -15,8 +15,8 @@ const SequentialDecipher = ({ text, startTrigger }: { text: string, startTrigger
 
         let revealIndex = 0;
         const interval = setInterval(() => {
-            revealIndex += 0.3; 
-            
+            revealIndex += 0.3;
+
             const currentString = text
                 .split("")
                 .map((char, i) => {
@@ -36,7 +36,7 @@ const SequentialDecipher = ({ text, startTrigger }: { text: string, startTrigger
 
         return () => clearInterval(interval);
     }, [text, startTrigger]);
-    
+
     useEffect(() => {
         const cleanup = decipherLogic();
         return cleanup;
@@ -49,9 +49,9 @@ const SequentialDecipher = ({ text, startTrigger }: { text: string, startTrigger
 const HomePage = ({ startDecipher }: { startDecipher: boolean }) => {
     return (
         <div className="h-screen w-full relative flex flex-col items-center justify-start bg-[#050505]">
-            <div 
-                className="z-10 text-center flex flex-col items-center w-full" 
-                style={{ paddingTop: '25vh' }} 
+            <div
+                className="z-10 text-center flex flex-col items-center w-full"
+                style={{ paddingTop: '25vh' }}
             >
                 {/* 1. MASSIVE MAIN TITLE */}
                 <div className="relative w-full flex justify-center items-center mb-2">
@@ -63,7 +63,7 @@ const HomePage = ({ startDecipher }: { startDecipher: boolean }) => {
                             textAnchor="middle"
                             className="font-bebas text-[19vw] md:text-[200px] tracking-wide fill-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] stroke-none"
                         >
-                            SOLVIFY NMIT
+                            SOLVIFY
                         </text>
                     </svg>
                 </div>
@@ -73,9 +73,9 @@ const HomePage = ({ startDecipher }: { startDecipher: boolean }) => {
                     <span className="text-[#FFD700] drop-shadow-[0_0_15px_rgba(255,215,0,0.4)] min-w-[150px] md:min-w-[200px] text-center">
                         <SequentialDecipher text="BRIDGING GAPS" startTrigger={startDecipher} />
                     </span>
-                    
+
                     <span className="hidden md:inline text-gray-500 text-xl">•</span>
-                    
+
                     <span className="text-white min-w-[200px] md:min-w-[250px] text-center">
                         <SequentialDecipher text="SOLVING CHALLENGES" startTrigger={startDecipher} />
                     </span>
