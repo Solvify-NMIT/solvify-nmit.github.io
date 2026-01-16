@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Globe } from "lucide-react";
-import { TeamMember } from "@/lib/data/teamData";
+import { TeamMember } from "@/lib/data/MainTeamData";
 
 interface TeamCardProps {
     member: TeamMember;
@@ -18,7 +18,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="flex flex-col bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#FFD700] rounded-lg p-4 shadow-[0_0_20px_rgba(255,215,0,0.2)] hover:shadow-[0_0_30px_rgba(255,215,0,0.4)] transition-all duration-300 hover:scale-[1.02] group"
+            className="flex flex-col bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#FFD700] rounded-lg p-4 shadow-[0_0_20px_rgba(255,215,0,0.2)] transition-all duration-300"
         >
             {/* Image Container */}
             <div className="w-full border-2 border-[#FFD700]/50 rounded-lg overflow-hidden mb-4">
@@ -28,7 +28,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, index }) => {
                         alt={member.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="object-cover transition-transform duration-300"
                     />
                 </div>
             </div>
