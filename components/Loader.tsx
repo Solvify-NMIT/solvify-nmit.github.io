@@ -61,45 +61,45 @@ const TerminalLoader = () => {
 };
 
 // --- COMPONENT: FLYING LOGO ---
-const FlyingLogo = ({ sequenceStage }: { sequenceStage: number }) => {
-  // Stage 2: Fast Spin in center
-  // Stage 3: Glide to Navbar
-  const isContinuous = sequenceStage === 2;
-  const isExit = sequenceStage === 3;
+// const FlyingLogo = ({ sequenceStage }: { sequenceStage: number }) => {
+//   // Stage 2: Fast Spin in center
+//   // Stage 3: Glide to Navbar
+//   const isContinuous = sequenceStage === 2;
+//   const isExit = sequenceStage === 3;
 
-  const customTranslateClass = 'translate-x-[calc(-50%+5.5vw)]';
+//   const customTranslateClass = 'translate-x-[calc(-50%+5.5vw)]';
 
-  return (
-    <motion.div
-      layoutId="solvify-logo-center"
-      key="flying-logo"
-      initial={{ scale: 0, rotate: -180, opacity: 0, zIndex: 999 }}
-      animate={{
-        rotate: sequenceStage >= 2 ? 1080 : 0,
-        scale: sequenceStage === 2 ? 1.0 : 0.8,
-        opacity: sequenceStage >= 2 ? 1 : 0,
-        x: isExit ? -15 : 0,
-        y: isExit ? -400 : 0,
-      }}
-      transition={{
-        rotate: {
-          duration: isContinuous ? 1.2 : 0.8,
-          repeat: isContinuous ? Infinity : 0,
-          ease: "linear"
-        },
-        // Faster, smoother spring to prevent the 1-2s delay/glitch at the top
-        y: { type: "spring", stiffness: 200, damping: 30 },
-        x: { type: "spring", stiffness: 200, damping: 30 },
-        scale: { type: "spring", stiffness: 250, damping: 20 },
-        opacity: { duration: 0.3 }
-      }}
-      className={`fixed top-1/2 left-1/2 -translate-y-1/2 pointer-events-none ${customTranslateClass}`}
-      style={{ width: '10vw', maxWidth: '96px' }}
-    >
-      <img src="/solvify-logo.png" alt="Solvify Logo" className="w-full h-full object-contain" />
-    </motion.div>
-  );
-};
+//   return (
+//     <motion.div
+//       layoutId="solvify-logo-center"
+//       key="flying-logo"
+//       initial={{ scale: 0, rotate: -180, opacity: 0, zIndex: 999 }}
+//       animate={{
+//         rotate: sequenceStage >= 2 ? 1080 : 0,
+//         scale: sequenceStage === 2 ? 1.0 : 0.8,
+//         opacity: sequenceStage >= 2 ? 1 : 0,
+//         x: isExit ? -15 : 0,
+//         y: isExit ? -400 : 0,
+//       }}
+//       transition={{
+//         rotate: {
+//           duration: isContinuous ? 1.2 : 0.8,
+//           repeat: isContinuous ? Infinity : 0,
+//           ease: "linear"
+//         },
+//         // Faster, smoother spring to prevent the 1-2s delay/glitch at the top
+//         y: { type: "spring", stiffness: 200, damping: 30 },
+//         x: { type: "spring", stiffness: 200, damping: 30 },
+//         scale: { type: "spring", stiffness: 250, damping: 20 },
+//         opacity: { duration: 0.3 }
+//       }}
+//       className={`fixed top-1/2 left-1/2 -translate-y-1/2 pointer-events-none ${customTranslateClass}`}
+//       style={{ width: '10vw', maxWidth: '96px' }}
+//     >
+//       <img src="/solvify-logo.png" alt="Solvify Logo" className="w-full h-full object-contain" />
+//     </motion.div>
+//   );
+// };
 
 // --- MAIN LOADER COMPONENT ---
 const Loader = ({ onIntroComplete }: { onIntroComplete: () => void }) => {
@@ -187,7 +187,7 @@ const Loader = ({ onIntroComplete }: { onIntroComplete: () => void }) => {
         )}
       </AnimatePresence>
 
-      {(stage >= 2) && <FlyingLogo sequenceStage={stage} />}
+      {/* {(stage >= 2) && <FlyingLogo sequenceStage={stage} />} */}
     </div>
   );
 };
