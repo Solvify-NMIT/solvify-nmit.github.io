@@ -61,7 +61,7 @@ const HomePage = ({ startDecipher }: { startDecipher: boolean }) => {
                             y="50%"
                             dy=".35em"
                             textAnchor="middle"
-                            className="font-bebas text-[19vw] md:text-[200px] tracking-wide fill-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] stroke-none"
+                            className="font-bebas text-[70vw] md:text-[200px] tracking-wide fill-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] stroke-none"
                         >
                             SOLVIFY
                         </text>
@@ -69,7 +69,7 @@ const HomePage = ({ startDecipher }: { startDecipher: boolean }) => {
                 </div>
 
                 {/* 2. SUBTITLES */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-base md:text-3xl font-montserrat font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-3xl md:text-3xl font-montserrat font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase">
                     <span className="text-[#FFD700] drop-shadow-[0_0_15px_rgba(255,215,0,0.4)] min-w-[150px] md:min-w-[200px] text-center">
                         <SequentialDecipher text="BRIDGING GAPS" startTrigger={startDecipher} />
                     </span>
