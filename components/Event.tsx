@@ -27,12 +27,14 @@ const Event = () => {
         breakpoint: 1000,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 700,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -94,24 +96,24 @@ const Event = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="relative w-full mx-auto mb-10 text-white mt-10 font-montserrat"
+          className="relative w-full mx-auto mb-10 text-white mt-6 md:mt-10 font-montserrat px-2 md:px-0"
         >
-          <hr className="absolute top-[50%] left-0 w-full border-[#FFD700]/50 border-2" />
-          <div className="relative flex flex-row justify-evenly items-center pt-2">
+          <div className="relative flex flex-row justify-center md:justify-evenly items-start gap-2 md:gap-0 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
+            <hr className="absolute top-[12px] md:top-[16px] left-0 w-full border-[#FFD700]/50 border-2" />
             {events.map((event, i) => {
-              const isActive = Math.floor(slideIndex / 3) === i;
+              const photosPerEvent = event.photos.length;
+              const startIndex = events.slice(0, i).reduce((acc, e) => acc + e.photos.length, 0);
+              const isActive = slideIndex >= startIndex && slideIndex < startIndex + photosPerEvent;
               return (
                 <div
                   key={`eventname${i}`}
-                  onClick={() => sliderRef.current?.slickGoTo(i * 3)}
-                  className="flex flex-col items-center cursor-pointer group transition-all duration-300"
+                  onClick={() => sliderRef.current?.slickGoTo(startIndex)}
+                  className="flex flex-col items-center cursor-pointer group transition-all duration-300 flex-shrink-0 px-2 md:px-0 relative z-10"
                 >
                   <div
-                    className={`${isActive ? "w-8 h-8" : "w-4 h-4"
-                      } transition-all duration-300 rounded-md bg-[#FFD700] shadow-[0_0_10px_rgba(255,215,0,0.6)] group-hover:shadow-[0_0_15px_rgba(255,215,0,0.8)] ${isActive ? "scale-110" : "scale-100"
-                      }`}
+                    className={`${isActive ? "w-6 md:w-8" : "w-3 md:w-4"} transition-all h-6 md:h-8 rounded-md bg-[#FFD700] shadow-[0_0_10px_rgba(255,215,0,0.6)] group-hover:shadow-[0_0_15px_rgba(255,215,0,0.8)]`}
                   ></div>
-                  <p className="mt-3 text-center text-sm md:text-base font-medium text-[#FFD700] drop-shadow-[0_0_8px_rgba(255,215,0,0.3)] min-w-max px-2">
+                  <p className="mt-2 text-center text-xs sm:text-sm md:text-base font-medium text-[#FFD700] drop-shadow-[0_0_8px_rgba(255,215,0,0.3)] px-1 md:px-2 break-words max-w-[80px] sm:max-w-[100px] md:max-w-none w-min">
                     {event.name}
                   </p>
                 </div>
