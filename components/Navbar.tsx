@@ -4,18 +4,27 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Navbar = () => {
-  const [isVisible, setIsVisible] = useState(false);
+type NavbarProps = {
+  skipIntro?: boolean;
+};
+
+const Navbar = ({ skipIntro = false }: NavbarProps) => {
+  const [isVisible, setIsVisible] = useState(skipIntro);
   const [isOpen, setIsOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Sync with HomePage animation timeline: Intro finishes at 9400ms.
   useEffect(() => {
+    if (skipIntro) {
+      setIsVisible(true);
+      return;
+    }
+
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 9400); // Synchronized to 9400ms for instant appearance after jump
     return () => clearTimeout(timer);
-  }, []);
+  }, [skipIntro]);
 
   // Disable body scroll when sidebar is open
   useEffect(() => {
