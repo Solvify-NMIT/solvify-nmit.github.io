@@ -48,7 +48,7 @@ const Navbar = ({ skipIntro = false }: NavbarProps) => {
   const rightLinks = [
     // { name: "PROJECTS", path: "#projects" },
     { name: "TEAM", path: "/team" },
-    { name: "CONTACT US", path: "#contact" },
+    { name: "CONTACT US", path: "/contact" },
   ];
 
   // Combine all links for mobile sidebar
