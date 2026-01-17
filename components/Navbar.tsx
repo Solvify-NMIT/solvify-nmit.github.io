@@ -47,8 +47,8 @@ const Navbar = ({ skipIntro = false }: NavbarProps) => {
 
   const rightLinks = [
     // { name: "PROJECTS", path: "#projects" },
-    { name: "TEAM", path: "#team" },
-    { name: "CONTACT US", path: "#contact us" },
+    { name: "TEAM", path: "/team" },
+    { name: "CONTACT US", path: "#contact" },
   ];
 
   // Combine all links for mobile sidebar
@@ -258,7 +258,10 @@ const NavLink = ({
     if (item.path.startsWith('#') && item.path !== '#') {
       e.preventDefault();
       // You can add smooth scrolling logic here later if needed
-      // document.getElementById(item.path.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+      const element = document.getElementById(item.path.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
 
     // Close sidebar on mobile when link is clicked

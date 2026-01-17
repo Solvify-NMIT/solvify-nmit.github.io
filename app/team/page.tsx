@@ -10,10 +10,11 @@ import { motion } from "framer-motion";
 // Domains to check (order matters for display)
 const DOMAINS: TeamMember["domain"][] = [
     "Lead",
-    "Core Team",
-    "Technical",
-    "Graphics",
-    "Documentation",
+    "Design Team",
+    "Operation Team",
+    "PR Team",
+    "Content Team",
+    "Tech Team",
     "Social Media",
 ];
 
@@ -36,19 +37,20 @@ const TeamPage = () => {
                 <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-[#FFD700]/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 md:px-8 pt-24 pb-20">
+            <div className="relative z-10 w-full pt-24 pb-20">
 
                 {/* CENTERED HEADER */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-20 max-w-4xl mx-auto"
+                    className="mb-12 md:mb-16 text-center w-full"
                 >
-                    <h1 className="font-bebas text-8xl md:text-9xl text-[#FFD700] tracking-wider mb-6 leading-none drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]">
+                    <h1 className="font-bebas text-[clamp(2.5rem,6vw,5rem)] font-black uppercase tracking-wide text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] mb-4">
                         THE TEAM
                     </h1>
-                    <p className="font-montserrat text-white/70 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                    <div className="mx-auto h-[3px] w-[100px] bg-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.4)]"></div>
+                    <p className="font-montserrat text-white/70 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mt-6 px-4">
                         Meet the passionate individuals driving innovation and creativity at Solvify.
                         From tech wizards to design gurus, we are a diverse family.
                     </p>
@@ -56,26 +58,20 @@ const TeamPage = () => {
 
                 {/* MAIN CONTENT */}
                 <main className="min-h-screen">
-                    <div className="space-y-32">
+                    <div className="space-y-16 md:space-y-24 w-[90%] lg:w-[85%] max-w-[1400px] mx-auto">
                         {availableDomains.map((domain) => {
                             const members = getMembersByDomain(domain);
                             return (
                                 <section key={domain} id={domain} className="scroll-mt-40">
                                     {/* Section Header */}
-                                    <div className="relative mb-16 group">
-                                        <div className="flex items-end gap-6">
-                                            <h2 className="font-bebas text-6xl md:text-8xl text-white opacity-90 tracking-wide">
-                                                {domain}
-                                            </h2>
-                                            <div className="h-[1px] flex-1 bg-gradient-to-r from-[#FFD700]/30 to-transparent mb-4 group-hover:from-[#FFD700]/60 transition-colors duration-500"></div>
-                                        </div>
-                                        <div className="text-white/40 text-sm font-montserrat uppercase tracking-[0.3em] mt-2 ml-1">
-                                            {members.length} member{members.length !== 1 ? 's' : ''}
-                                        </div>
+                                    <div className="mb-6 md:mb-8 text-center md:text-left">
+                                        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-[#FFD700] drop-shadow-[0_0_10px_rgba(255,215,0,0.4)] tracking-wide inline-flex items-center gap-4">
+                                            {domain}
+                                        </h2>
                                     </div>
 
                                     {/* Grid */}
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                                         {members.map((member, idx) => (
                                             <TeamCard
                                                 key={`${member.name}-${idx}`}
