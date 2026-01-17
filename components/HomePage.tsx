@@ -48,10 +48,9 @@ const SequentialDecipher = ({ text, startTrigger }: { text: string, startTrigger
 // --- MAIN STATIC HOMEPAGE CONTENT ---
 const HomePage = ({ startDecipher }: { startDecipher: boolean }) => {
     return (
-        <div className="h-screen w-full relative flex flex-col items-center justify-start bg-[#050505]">
+        <div className="h-screen w-full relative flex flex-col items-center justify-center bg-[#050505]">
             <div
-                className="z-10 text-center flex flex-col items-center w-full"
-                style={{ paddingTop: '25vh' }}
+                className="z-10 text-center flex flex-col items-center w-full -mt-20"
             >
                 {/* 1. MASSIVE MAIN TITLE */}
                 <div className="relative w-full flex justify-center items-center mb-2">
