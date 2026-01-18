@@ -47,13 +47,9 @@ const TeamPage = () => {
                     className="mb-12 md:mb-16 text-center w-full"
                 >
                     <h1 className="font-bebas text-[clamp(2.5rem,6vw,5rem)] font-black uppercase tracking-wide text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] mb-4">
-                        THE TEAM
+                        MEET THE TEAM
                     </h1>
                     <div className="mx-auto h-[3px] w-[100px] bg-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.4)]"></div>
-                    <p className="font-montserrat text-white/70 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mt-6 px-4">
-                        Meet the passionate individuals driving innovation and creativity at Solvify.
-                        From tech wizards to design gurus, we are a diverse family.
-                    </p>
                 </motion.div>
 
                 {/* MAIN CONTENT */}

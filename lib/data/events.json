@@ -1,59 +1,58 @@
 [
   {
-    "name": "Byte Battle",
+    "name": "Byte Battle 2",
     "photos": [
       {
-        "img": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=800&fit=crop"
+        "img": "/event/Byte_Battle_2/IMG_4551.jpg"
       },
       {
-        "img": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=800&fit=crop"
+        "img": "/event/Byte_Battle_2/IMG_4618.jpg"
       },
       {
-        "img": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=800&fit=crop"
+        "img": "/event/Byte_Battle_2/IMG_4757.jpg"
       }
     ]
   },
   {
-    "name": "Tech Workshop Series",
+    "name": "WorkShop",
     "photos": [
       {
-        "img": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=800&fit=crop"
+        "img": "/event/WorkShop/20250920_103310AMByGPSMapCamera.jpg"
       },
       {
-        "img": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=800&fit=crop"
+        "img": "/event/WorkShop/IMG_0458.jpg"
       },
       {
-        "img": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=800&fit=crop"
+        "img": "/event/WorkShop/IMG_0495.jpg"
       }
     ]
   },
   {
-    "name":"Coding Battle",
+    "name": "Glitch Fix",
     "photos": [
       {
-        "img": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=800&fit=crop"
+        "img": "/event/Glitchfix/IMG_0666.JPG"
       },
       {
-        "img": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=800&fit=crop"
+        "img": "/event/Glitchfix/IMG_0689.JPG"
       },
       {
-        "img": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=800&fit=crop"
+        "img": "/event/Glitchfix/IMG_8265.jpg"
       }
     ]
   },
   {
-    "name": "Innovation Summit",
+    "name": "Byte Battle 1",
     "photos": [
       {
-        "img": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=800&fit=crop"
+        "img": "/event/Byte_Battle_1/Screenshot 2026-01-17 235934.png"
       },
       {
-        "img": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=800&fit=crop"
+        "img": "/event/Byte_Battle_1/Screenshot 2026-01-17 235945.png"
       },
       {
-        "img": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=800&fit=crop"
+        "img": "/event/Byte_Battle_1/Screenshot 2026-01-17 235959.png"
       }
     ]
   }
 ]
-
