@@ -1,4 +1,11 @@
-import { TeamMember } from "./MainTeamData";
+export interface TeamMember {
+  name: string;
+  position: string;
+  img: string;
+  github?: string;
+  linkedin?: string;
+  link?: string;
+}
 
 export const coreTeam: TeamMember[] = [
   {
@@ -8,7 +15,6 @@ export const coreTeam: TeamMember[] = [
     github: "https://github.com/johndoe",
     linkedin: "https://linkedin.com/in/johndoe",
     link: "https://johndoe.dev",
-    domain: "Lead",
   },
   {
     name: "Jane Smith",
@@ -16,7 +22,6 @@ export const coreTeam: TeamMember[] = [
     img: "https://i.pravatar.cc/300?img=2",
     github: "https://github.com/janesmith",
     linkedin: "https://linkedin.com/in/janesmith",
-    domain: "Tech Team",
   },
   {
     name: "Alex Johnson",
@@ -24,14 +29,12 @@ export const coreTeam: TeamMember[] = [
     img: "https://i.pravatar.cc/300?img=3",
     github: "https://github.com/alexjohnson",
     linkedin: "https://linkedin.com/in/alexjohnson",
-    domain: "Design Team",
   },
   {
     name: "Sarah Williams",
     position: "Events Lead",
     img: "https://i.pravatar.cc/300?img=4",
     linkedin: "https://linkedin.com/in/sarahwilliams",
-    domain: "Lead",
   },
 ];
 

@@ -66,7 +66,7 @@ export default function Home() {
                         <section id="events">
                             <Event />
                         </section>
-                        {/* <TeamHome /> */}
+                        <TeamHome />
                         {/* <Instagram/> */}
                         {/* <ContactUsHome/> */}
                         <section id="contact">
