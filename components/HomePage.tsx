@@ -68,14 +68,15 @@ const HomePage = ({ startDecipher }: { startDecipher: boolean }) => {
                 </div>
 
                 {/* 2. SUBTITLES */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-3xl md:text-3xl font-montserrat font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase">
-                    <span className="text-[#FFD700] drop-shadow-[0_0_15px_rgba(255,215,0,0.4)] min-w-[150px] md:min-w-[200px] text-center">
+                {/* 2. SUBTITLES */}
+                <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-4 text-sm sm:text-base md:text-3xl font-montserrat font-semibold tracking-widest md:tracking-[0.3em] uppercase w-full px-4">
+                    <span className="text-[#FFD700] drop-shadow-[0_0_15px_rgba(255,215,0,0.4)] text-center w-full md:w-auto">
                         <SequentialDecipher text="BRIDGING GAPS" startTrigger={startDecipher} />
                     </span>
 
                     <span className="hidden md:inline text-gray-500 text-xl">•</span>
 
-                    <span className="text-white min-w-[200px] md:min-w-[250px] text-center">
+                    <span className="text-white text-center w-full md:w-auto mt-2 md:mt-0">
                         <SequentialDecipher text="SOLVING CHALLENGES" startTrigger={startDecipher} />
                     </span>
                 </div>
