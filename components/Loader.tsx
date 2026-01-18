@@ -172,10 +172,10 @@ const Loader = ({ onIntroComplete }: { onIntroComplete: () => void }) => {
                       <rect x={stage >= 1 ? "100%" : "0%"} y="0" width="100%" height="100%" className="transition-all ease-in-out" style={{ transitionDuration: '2000ms' }} />
                     </clipPath>
                   </defs>
-                  <text x="50%" y="50%" dy=".35em" textAnchor="middle" clipPath="url(#text-stroke-clip)" className="font-bebas text-[19vw] md:text-[200px] tracking-wide stroke-[#FFD700] stroke-[3px] fill-transparent" style={{ strokeDasharray: '1035px', strokeDashoffset: '1035px', animation: "drawStroke 5s ease-in-out forwards" }}>
+                  <text x="50%" y="50%" dy=".35em" textAnchor="middle" clipPath="url(#text-stroke-clip)" className="font-bebas text-[75vw] md:text-[200px] tracking-wide stroke-[#FFD700] stroke-[3px] fill-transparent" style={{ strokeDasharray: '1035px', strokeDashoffset: '1035px', animation: "drawStroke 5s ease-in-out forwards" }}>
                     SOLVIFY
                   </text>
-                  <text x="50%" y="50%" dy=".35em" textAnchor="middle" clipPath="url(#text-fill-clip)" className="font-bebas text-[19vw] md:text-[200px] tracking-wide fill-white stroke-none">
+                  <text x="50%" y="50%" dy=".35em" textAnchor="middle" clipPath="url(#text-fill-clip)" className="font-bebas text-[75vw] md:text-[200px] tracking-wide fill-white stroke-none">
                     SOLVIFY
                   </text>
                 </svg>
