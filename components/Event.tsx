@@ -41,7 +41,7 @@ const Event = () => {
   };
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-[#050505] text-white py-12 md:py-0">
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-[#050505] text-white py-12 md:py-20">
       {/* Title Section */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -64,7 +64,7 @@ const Event = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full h-full mx-auto mt-[5vh] p-4 pb-3 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#FFD700] rounded-lg shadow-[0_0_30px_rgba(255,215,0,0.3)]"
+          className="w-full h-full mx-auto mt-[5vh] p-2 pt-2 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#FFD700] rounded-lg shadow-[0_0_30px_rgba(255,215,0,0.3)]"
         >
           <Slider ref={sliderRef} {...settings}>
             {events.map((event, i) => {
@@ -72,9 +72,9 @@ const Event = () => {
                 return (
                   <div
                     key={`event${i}pic${j}`}
-                    className="px-2"
+                    className=""
                   >
-                    <div className="relative w-full aspect-square overflow-hidden rounded-lg border border-[#FFD700]/30 shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,215,0,0.4)] hover:scale-[1.02]">
+                    <div className="relative w-full aspect-square overflow-hidden shadow-[0_0_15px_rgba(255,215,0,0.2)] transition-all duration-300">
                       <Image
                         src={pic.img}
                         alt={`${event.name} - Photo ${j + 1}`}
@@ -96,29 +96,35 @@ const Event = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="relative w-full mx-auto mb-10 text-white mt-6 md:mt-10 font-montserrat px-2 md:px-0"
+          className="w-full mx-auto mt-8 md:mt-12 text-white font-montserrat"
         >
-          <div className="relative flex flex-row justify-center md:justify-evenly items-start gap-2 md:gap-0 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
-            <hr className="absolute top-[12px] md:top-[16px] left-0 w-full border-[#FFD700]/50 border-2" />
-            {events.map((event, i) => {
-              const photosPerEvent = event.photos.length;
-              const startIndex = events.slice(0, i).reduce((acc, e) => acc + e.photos.length, 0);
-              const isActive = slideIndex >= startIndex && slideIndex < startIndex + photosPerEvent;
-              return (
-                <div
-                  key={`eventname${i}`}
-                  onClick={() => sliderRef.current?.slickGoTo(startIndex)}
-                  className="flex flex-col items-center cursor-pointer group transition-all duration-300 flex-shrink-0 px-2 md:px-0 relative z-10"
-                >
+          {/* Scrollable Container */}
+          <div className="overflow-x-auto w-full pb-4 scrollbar-hide">
+            {/* Inner Expanding Container */}
+            <div className="relative min-w-full w-max flex flex-row justify-center items-start gap-4 md:gap-8 px-4 md:px-0">
+              {/* Connector Line */}
+              <div className="absolute top-[12px] md:top-[16px] left-0 w-full h-[2px] bg-[#FFD700]/50" />
+
+              {events.map((event, i) => {
+                const photosPerEvent = event.photos.length;
+                const startIndex = events.slice(0, i).reduce((acc, e) => acc + e.photos.length, 0);
+                const isActive = slideIndex >= startIndex && slideIndex < startIndex + photosPerEvent;
+                return (
                   <div
-                    className={`${isActive ? "w-6 md:w-8" : "w-3 md:w-4"} transition-all h-6 md:h-8 rounded-md bg-[#FFD700] shadow-[0_0_10px_rgba(255,215,0,0.6)] group-hover:shadow-[0_0_15px_rgba(255,215,0,0.8)]`}
-                  ></div>
-                  <p className="mt-2 text-center text-xs sm:text-sm md:text-base font-medium text-[#FFD700] drop-shadow-[0_0_8px_rgba(255,215,0,0.3)] px-1 md:px-2 break-words max-w-[80px] sm:max-w-[100px] md:max-w-none w-min">
-                    {event.name}
-                  </p>
-                </div>
-              );
-            })}
+                    key={`eventname${i}`}
+                    onClick={() => sliderRef.current?.slickGoTo(startIndex)}
+                    className="flex flex-col items-center cursor-pointer group transition-all duration-300 relative z-10 w-24 md:w-32"
+                  >
+                    <div
+                      className={`${isActive ? "w-6 md:w-8 scale-110" : "w-3 md:w-4"} transition-all h-6 md:h-8 rounded-md bg-[#FFD700] shadow-[0_0_10px_rgba(255,215,0,0.6)]`}
+                    ></div>
+                    <p className={`mt-3 text-center text-xs sm:text-sm md:text-base font-medium transition-colors duration-300 ${isActive ? "text-[#FFD700]" : "text-white/70"} drop-shadow-[0_0_8px_rgba(255,215,0,0.3)] break-words w-full`}>
+                      {event.name}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
       </div>
