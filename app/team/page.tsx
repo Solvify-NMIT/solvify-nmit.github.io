@@ -9,8 +9,7 @@ import { motion } from "framer-motion";
 
 // Domains to check (order matters for display)
 const DOMAINS: TeamMember["domain"][] = [
-    "Lead",
-    "Co-Lead",
+    "Heads",
     "Tech Team",
     "Design Team",
     "Content Team",

@@ -5,7 +5,7 @@ export interface TeamMember {
     github?: string;
     linkedin?: string;
     link?: string;
-    domain: "Lead" |"Co-Lead"|"Tech Team"| "Design Team" | "Operations Team"| "Content Team" | "PR Team"  |  "Social Media";
+    domain:"Heads"|"Tech Team"| "Design Team" | "Operations Team"| "Content Team" | "PR Team"  |  "Social Media";
 }
 
 // Helper: title case function not needed in runtime if data is pre-processed,
@@ -13,8 +13,8 @@ export interface TeamMember {
 
 export const teamData: TeamMember[] = [
     // Lead
-    {name: "Pragna Yanamadala", position:"Lead", img:"/Team/Pragna.png" , domain:"Lead" },
-    {name:"Neelanshu", position:"Co-Lead",img:"/Team/NEELANSHU.png",domain:"Co-Lead"},
+    {name: "Pragna Yanamadala", position:"Lead", img:"/Team/Pragna.png" , domain:"Heads" },
+    {name:"Neelanshu", position:"Co-Lead",img:"/Team/NEELANSHU.png",domain:"Heads"},
 
     // Core Team (from 'design' and 'operation')
    
