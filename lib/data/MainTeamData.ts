@@ -5,7 +5,7 @@ export interface TeamMember {
     github?: string;
     linkedin?: string;
     link?: string;
-    domain: "Lead" | "Design Team" | "Operation Team" | "PR Team" | "Content Team" | "Tech Team" | "Social Media";
+    domain: "Lead" |"Co-Lead"|"Tech Team"| "Design Team" | "Operations Team"| "Content Team" | "PR Team"  |  "Social Media";
 }
 
 // Helper: title case function not needed in runtime if data is pre-processed,
@@ -13,9 +13,11 @@ export interface TeamMember {
 
 export const teamData: TeamMember[] = [
     // Lead
-    // (Empty as requested)
+    {name: "Pragna Yanamadala", position:"Lead", img:"/Team/Pragna.png" , domain:"Lead" },
+    {name:"Neelanshu", position:"Co-Lead",img:"/Team/NEELANSHU.png",domain:"Co-Lead"},
 
     // Core Team (from 'design' and 'operation')
+   
     { name: "Soumika Sahoo", position: "Lead", img: "/Team/design/Soumika%20Sahoo.png", domain: "Design Team" },
     { name: "Ashish Anand", position: "Design Team Member", img: "/Team/design/Ashish%20Anand.png", domain: "Design Team" },
     { name: "Malatesh K", position: "Co-Lead", img: "/Team/design/MALATESH%20K.png", domain: "Design Team" },
@@ -23,13 +25,14 @@ export const teamData: TeamMember[] = [
     { name: "Sahana R", position: "Design Team Member", img: "/Team/design/SAHANA%20R.png", domain: "Design Team" },
     { name: "Sudhanshu S Sahoo", position: "Design Team Member", img: "/Team/design/SUDHANSHU%20S%20SAHOO.png", domain: "Design Team" },
     { name: "Shreyansh", position: "Design Team Member", img: "/Team/design/Shreyansh.png", domain: "Design Team" },
+    {name: "Siri Samyukthakoppuravuri", position:"Design Team Member", img:"/Team/design/sirisamyukthakoppuravuri.png",domain:"Design Team"},
 
-    { name: "Arpan Poudel", position: "Operations Team Member", img: "/Team/operation/ARPAN%20POUDEL.png", domain: "Operation Team" },
-    { name: "J Kushal Prajeevan", position: "Operations Team Member", img: "/Team/operation/J%20KUSHAL%20PRAJEEVAN.png", domain: "Operation Team" },
-    { name: "Parvathy Sankaraseshan", position: "Lead", img: "/Team/operation/PARVATHY%20SANKARASESHAN.png", domain: "Operation Team" },
-    { name: "Sujoy Bandyopadhyay", position: "Operations Team Member", img: "/Team/operation/SUJOY%20BANDYOPADHYAY.png", domain: "Operation Team" },
-    { name: "Ujjwal S", position: "Operations Team Member", img: "/Team/operation/UJJWAL%20S.png", domain: "Operation Team" },
-    { name: "Vaishnavi Chidambar", position: "Operations Team Member", img: "/Team/operation/VAISHNAVI%20CHIDAMBAR.png", domain: "Operation Team" },
+    { name: "Arpan Poudel", position: "Operations Team Member", img: "/Team/operation/ARPAN%20POUDEL.png", domain: "Operations Team" },
+    { name: "J Kushal Prajeevan", position: "Operations Team Member", img: "/Team/operation/J%20KUSHAL%20PRAJEEVAN.png", domain: "Operations Team" },
+    { name: "Parvathy Sankaraseshan", position: "Lead", img: "/Team/operation/PARVATHY%20SANKARASESHAN.png", domain: "Operations Team" },
+    { name: "Sujoy Bandyopadhyay", position: "Operations Team Member", img: "/Team/operation/SUJOY%20BANDYOPADHYAY.png", domain: "Operations Team" },
+    { name: "Ujjwal S", position: "Operations Team Member", img: "/Team/operation/UJJWAL%20S.png", domain: "Operations Team" },
+    { name: "Vaishnavi Chidambar", position: "Operations Team Member", img: "/Team/operation/VAISHNAVI%20CHIDAMBAR.png", domain: "Operations Team" },
 
     // Technical (from 'pr')
     { name: "Eashan Singh", position: "Lead", img: "/Team/pr/EASHAN%20SINGH.png", domain: "PR Team" },
@@ -43,12 +46,13 @@ export const teamData: TeamMember[] = [
     // Graphics (from 'content')
     { name: "Nikhil Mirji", position: "Lead", img: "/Team/content/NIKHIL%20MIRJI.png", domain: "Content Team" },
     { name: "Varshini K", position: "Co-Lead", img: "/Team/content/VARSHINI%20K.png", domain: "Content Team" },
-    { name: "Harivadhana S", position: "Content Team Member", img: "/Team/content/HARIVADHANA%20S.png", domain: "Content Team" },
     { name: "Kriti Ganeriwal", position: "Content Team Member", img: "/Team/content/KRITI%20GANERIWAL.png", domain: "Content Team" },
     { name: "Pragna Jadhav", position: "Content Team Member", img: "/Team/content/Pragna%20Jadhav.png", domain: "Content Team" },
     { name: "Shipra Goyal", position: "Content Team Member", img: "/Team/content/SHIPRA%20GOYAL.png", domain: "Content Team" },
+    {name:"Shruti Jha" , position: "Content Team Member", img:"/Team/content/SHRUTI%20JHA.png" , domain:"Content Team"},
+    {name:"Rahul Nath" , position: "Content Team Member", img:"/Team/content/RAHUL%20NATH.png", domain:"Content Team"},
 
-    // Documentation (from 'tech')
+     
     { name: "Priyanshu Kumar", position: "Lead", img: "/Team/tech/PRIYANSHU%20KUMAR.png", domain: "Tech Team" },
     { name: "Farhath", position: "Co-Lead", img: "/Team/tech/FARHATH.png", domain: "Tech Team" },
     { name: "Aditya Sahu", position: "Tech Team Member", img: "/Team/tech/ADITYA%20SAHU.png", domain: "Tech Team" },

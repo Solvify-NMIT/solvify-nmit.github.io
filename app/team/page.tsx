@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
@@ -10,11 +10,12 @@ import { motion } from "framer-motion";
 // Domains to check (order matters for display)
 const DOMAINS: TeamMember["domain"][] = [
     "Lead",
-    "Design Team",
-    "Operation Team",
-    "PR Team",
-    "Content Team",
+    "Co-Lead",
     "Tech Team",
+    "Design Team",
+    "Content Team",
+    "Operations Team",
+    "PR Team",
     "Social Media",
 ];
 
