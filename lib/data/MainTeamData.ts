@@ -35,7 +35,7 @@ export const teamData: TeamMember[] = [
     { name: "Vaishnavi Chidambar", position: "Member", img: "/Team/operation/VAISHNAVI%20CHIDAMBAR.png", domain: "Operations Team" },
 
     // Technical (from 'pr')
-    { name: "Eashan Singh", position: "Lead", img: "/Team/pr/EASHAN SINGH.jpeg", domain: "PR Team" },
+    { name: "Eashan Singh", position: "Lead", img: "/Team/pr/EASHAN%20SINGH.png", domain: "PR Team" },
     { name: "Aditya Suhas", position: "Member", img: "/Team/pr/ADITYA%20SUHAS.png", domain: "PR Team" },
     { name: "Amith Jose", position: "Member", img: "/Team/pr/AMITH%20JOSE.png", domain: "PR Team" },
     { name: "Medha Gargi", position: "Member", img: "/Team/pr/MEDHA%20GARGI.png", domain: "PR Team" },
