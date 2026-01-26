@@ -1,21 +1,32 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Navbar = () => {
-  const [isVisible, setIsVisible] = useState(false);
+type NavbarProps = {
+  skipIntro?: boolean;
+};
+
+const Navbar = ({ skipIntro = false }: NavbarProps) => {
+  const [isVisible, setIsVisible] = useState(skipIntro);
   const [isOpen, setIsOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
+  const lastScrollY = useRef(0);
 
   // Sync with HomePage animation timeline: Intro finishes at 9400ms.
   useEffect(() => {
+    if (skipIntro) {
+      setIsVisible(true);
+      return;
+    }
+
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 9400); // Synchronized to 9400ms for instant appearance after jump
     return () => clearTimeout(timer);
-  }, []);
+  }, [skipIntro]);
 
   // Disable body scroll when sidebar is open
   useEffect(() => {
@@ -30,6 +41,27 @@ const Navbar = () => {
     };
   }, [isSidebarOpen]);
 
+  // Scroll detection to hide/show navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // If scrolling down and past 50px threshold, hide navbar
+      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+        setIsScrollingDown(true);
+      }
+      // If scrolling up, show navbar
+      else {
+        setIsScrollingDown(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const leftLinks = [
     { name: "HOME", path: "/" },
     { name: "ABOUT US", path: "#about" },
@@ -38,8 +70,8 @@ const Navbar = () => {
 
   const rightLinks = [
     // { name: "PROJECTS", path: "#projects" },
-    { name: "TEAM", path: "#team" },
-    { name: "CONTACT US", path: "#contact us" },
+    { name: "TEAM", path: "/team" },
+    { name: "CONTACT US", path: "/contact" },
   ];
 
   // Combine all links for mobile sidebar
@@ -68,7 +100,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-4 sm:top-8 left-0 right-0 z-50 flex justify-center items-center pointer-events-none">
+      <nav
+        className={`fixed top-4 sm:top-8 left-0 right-0 z-50 flex justify-center items-center pointer-events-none transition-transform duration-300 ${
+          // Hide when scrolling down, show when updated AND visible
+          !isVisible || isScrollingDown ? "-translate-y-[200%]" : "translate-y-0"
+          }`}
+      >
         {/* Container */}
         <motion.div
           layout
@@ -85,7 +122,7 @@ const Navbar = () => {
               className="overflow-hidden flex items-center hidden md:flex"
             >
               {/* Responsive spacing for mobile (sm:gap-8, sm:px-8) */}
-              <div className="flex items-center gap-4 px-4 sm:gap-8 sm:px-8 whitespace-nowrap">
+              <div className="flex items-center gap-3 px-3 sm:gap-6 sm:px-6 whitespace-nowrap">
                 {leftLinks.map((item) => (
                   <NavLink key={item.name} item={item} />
                 ))}
@@ -100,7 +137,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className={`
-                    relative z-50 flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center 
+                    relative z-50 flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center 
                     rounded-full transition-all duration-300
                     ${isOpen ? 'bg-white/10' : 'bg-black/40'}
                     border-2 border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.3)]
@@ -112,7 +149,7 @@ const Navbar = () => {
               <img
                 src="/solvify-logo.png"
                 alt="Solvify"
-                className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
               />
             </motion.button>
 
@@ -124,7 +161,7 @@ const Navbar = () => {
               className="overflow-hidden flex items-center hidden md:flex"
             >
               {/* Responsive spacing for mobile (sm:gap-8, sm:px-8) */}
-              <div className="flex items-center gap-4 px-4 sm:gap-8 sm:px-8 whitespace-nowrap">
+              <div className="flex items-center gap-3 px-3 sm:gap-6 sm:px-6 whitespace-nowrap">
                 {rightLinks.map((item) => (
                   <NavLink key={item.name} item={item} />
                 ))}
@@ -137,7 +174,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className={`
-                md:hidden flex-shrink-0 w-16 h-16 flex items-center justify-center 
+                md:hidden flex-shrink-0 w-14 h-14 flex items-center justify-center 
                 rounded-full transition-all duration-300
                 ${isSidebarOpen ? 'bg-white/10' : 'bg-black/40'}
                 border-2 border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.3)]
@@ -150,7 +187,7 @@ const Navbar = () => {
               <img
                 src="/solvify-logo.png"
                 alt="Solvify"
-                className="w-10 h-10 object-contain"
+                className="w-8 h-8 object-contain"
               />
             </motion.button>
 
@@ -249,7 +286,10 @@ const NavLink = ({
     if (item.path.startsWith('#') && item.path !== '#') {
       e.preventDefault();
       // You can add smooth scrolling logic here later if needed
-      // document.getElementById(item.path.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+      const element = document.getElementById(item.path.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
 
     // Close sidebar on mobile when link is clicked

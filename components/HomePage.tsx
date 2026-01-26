@@ -48,10 +48,9 @@ const SequentialDecipher = ({ text, startTrigger }: { text: string, startTrigger
 // --- MAIN STATIC HOMEPAGE CONTENT ---
 const HomePage = ({ startDecipher }: { startDecipher: boolean }) => {
     return (
-        <div className="h-screen w-full relative flex flex-col items-center justify-start bg-[#050505]">
+        <div className="h-screen w-full relative flex flex-col items-center justify-center bg-[#050505]">
             <div
-                className="z-10 text-center flex flex-col items-center w-full"
-                style={{ paddingTop: '25vh' }}
+                className="z-10 text-center flex flex-col items-center w-full -mt-20"
             >
                 {/* 1. MASSIVE MAIN TITLE */}
                 <div className="relative w-full flex justify-center items-center mb-2">
@@ -61,7 +60,7 @@ const HomePage = ({ startDecipher }: { startDecipher: boolean }) => {
                             y="50%"
                             dy=".35em"
                             textAnchor="middle"
-                            className="font-bebas text-[19vw] md:text-[200px] tracking-wide fill-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] stroke-none"
+                            className="font-bebas text-[70vw] md:text-[200px] tracking-wide fill-white drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] stroke-none"
                         >
                             SOLVIFY
                         </text>
@@ -69,14 +68,15 @@ const HomePage = ({ startDecipher }: { startDecipher: boolean }) => {
                 </div>
 
                 {/* 2. SUBTITLES */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-base md:text-3xl font-montserrat font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase">
-                    <span className="text-[#FFD700] drop-shadow-[0_0_15px_rgba(255,215,0,0.4)] min-w-[150px] md:min-w-[200px] text-center">
+                {/* 2. SUBTITLES */}
+                <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-4 text-2xl sm:text-3xl md:text-3xl font-montserrat font-semibold tracking-widest md:tracking-[0.3em] uppercase w-full px-4">
+                    <span className="text-[#FFD700] drop-shadow-[0_0_15px_rgba(255,215,0,0.4)] text-center w-full md:w-auto">
                         <SequentialDecipher text="BRIDGING GAPS" startTrigger={startDecipher} />
                     </span>
 
                     <span className="hidden md:inline text-gray-500 text-xl">•</span>
 
-                    <span className="text-white min-w-[200px] md:min-w-[250px] text-center">
+                    <span className="text-white text-center w-full md:w-auto mt-2 md:mt-0">
                         <SequentialDecipher text="SOLVING CHALLENGES" startTrigger={startDecipher} />
                     </span>
                 </div>

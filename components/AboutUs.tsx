@@ -13,7 +13,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-[#050505] text-white py-12 md:py-16">
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-[#050505] text-white pt-0 pb-12 md:py-16 -mt-6 md:mt-0">
 
       {/* Title Section */}
       <motion.div
