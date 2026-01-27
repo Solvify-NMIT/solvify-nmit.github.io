@@ -19,7 +19,7 @@ export const teamData: TeamMember[] = [
     // Core Team (from 'design' and 'operation')
 
     { name: "Soumika Sahoo", position: "Lead", img: "/Team/design/Soumika%20Sahoo.png", domain: "Design Team" },
-    { name: "Ashish Anand", position: "Design Team Member", img: "/Team/design/Ashish%20Anand.png", domain: "Design Team" },
+    { name: "Ashish Anand", position: "Member", img: "/Team/design/Ashish%20Anand.png", domain: "Design Team" },
     { name: "Malatesh K", position: "Co-Lead", img: "/Team/design/MALATESH%20K.png", domain: "Design Team" },
     { name: "Nikshay N", position: "Member", img: "/Team/design/Nikshay%20N.png", domain: "Design Team" },
     { name: "Sahana R", position: "Member", img: "/Team/design/SAHANA%20R.png", domain: "Design Team" },
