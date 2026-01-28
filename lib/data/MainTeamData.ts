@@ -20,7 +20,7 @@ export const teamData: TeamMember[] = [
 
     { name: "Soumika Sahoo", position: "Lead", img: "/Team/design/Soumika%20Sahoo.png", domain: "Design Team" },
     { name: "Ashish Anand", position: "Member", img: "/Team/design/Ashish%20Anand.png", domain: "Design Team" },
-    { name: "Malatesh K", position: "Co-Lead", img: "/Team/design/MALATESH.jpeg", domain: "Design Team" },
+    { name: "Malatesh K", position: "Co-Lead", img: "/Team/design/MALATESH.png", domain: "Design Team" },
     { name: "Sahana R", position: "Member", img: "/Team/design/SAHANA%20R.png", domain: "Design Team" },
     { name: "Sudhanshu S Sahoo", position: " Member", img: "/Team/design/SUDHANSHU%20S%20SAHOO.png", domain: "Design Team" },
     { name: "Shreyansh", position: "Member", img: "/Team/design/Shreyansh.png", domain: "Design Team" },
