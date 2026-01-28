@@ -20,7 +20,7 @@ export const teamData: TeamMember[] = [
 
     { name: "Soumika Sahoo", position: "Lead", img: "/Team/design/Soumika%20Sahoo.png", domain: "Design Team" },
     { name: "Ashish Anand", position: "Member", img: "/Team/design/Ashish%20Anand.png", domain: "Design Team" },
-    { name: "Malatesh K", position: "Co-Lead", img: "/Team/design/MALATESH%20K.png", domain: "Design Team" },
+    { name: "Malatesh K", position: "Co-Lead", img: "/Team/design/MALATESH.jpeg", domain: "Design Team" },
     { name: "Sahana R", position: "Member", img: "/Team/design/SAHANA%20R.png", domain: "Design Team" },
     { name: "Sudhanshu S Sahoo", position: " Member", img: "/Team/design/SUDHANSHU%20S%20SAHOO.png", domain: "Design Team" },
     { name: "Shreyansh", position: "Member", img: "/Team/design/Shreyansh.png", domain: "Design Team" },
@@ -54,9 +54,9 @@ export const teamData: TeamMember[] = [
 
     { name: "Priyanshu Kumar", position: "Lead", img: "/Team/tech/PRIYANSHU%20KUMAR.png", domain: "Tech Team" },
     { name: "Farhath", position: "Co-Lead", img: "/Team/tech/FARHATH.png", domain: "Tech Team" },
-    { name: "Nayana Ramesh", position: "Core", img: "/Team/tech/Nayana%20Ramesh.png", domain: "Tech Team" },
-    { name: "Aishvarya S", position: "Core", img: "/Team/tech/AISHVARYA%20S.png", domain: "Tech Team" },
-    { name: "Kishore M", position: "Core", img: "/Team/tech/KISHORE%20M.png", domain: "Tech Team" },
+    { name: "Nayana Ramesh", position: "Core Member", img: "/Team/tech/Nayana%20Ramesh.png", domain: "Tech Team" },
+    { name: "Aishvarya S", position: "Core Member", img: "/Team/tech/AISHVARYA%20S.png", domain: "Tech Team" },
+    { name: "Kishore M", position: "Core Member", img: "/Team/tech/KISHORE%20M.png", domain: "Tech Team" },
     { name: "Krishna Shrivastava", position: "Member", img: "/Team/tech/Krishna%20Shrivastava.png", domain: "Tech Team" },
     { name: "Aditya Sahu", position: " Member", img: "/Team/tech/ADITYA%20SAHU.png", domain: "Tech Team" },   
     { name: "Akshita Sanvi", position: "Member", img: "/Team/tech/AKSHITA%20SANVI_2.png", domain: "Tech Team" },
@@ -71,7 +71,7 @@ export const teamData: TeamMember[] = [
     // Social Media (from 'social media')
     { name: "Samim Kausar", position: "Lead", img: "/Team/social%20media/Samim_Kausar.png", domain: "Social Media" },
     { name: "Vinith Busipalli", position: "Co-Lead", img: "/Team/social%20media/VINITH%20BUSIPALLI.png", domain: "Social Media" },
-    { name: "Alluri Thanavi", position: "Core", img: "/Team/social%20media/Alluri%20Thanavi.png", domain: "Social Media" },
+    { name: "Alluri Thanavi", position: "Core Member", img: "/Team/social%20media/Alluri%20Thanavi.png", domain: "Social Media" },
     { name: "Chandana Javali R", position: "Member", img: "/Team/social%20media/CHANDANA%20JAVALI%20R.png", domain: "Social Media" },
     { name: "Chethan N", position: "Member", img: "/Team/social%20media/CHETHAN%20N.png", domain: "Social Media" },
     { name: "Priyanka Kumari", position: "Member", img: "/Team/social%20media/PRIYANKA%20KUMARI.png", domain: "Social Media" },
